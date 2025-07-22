@@ -6,4 +6,4 @@ if "login_realizado" not in st.session_state:
     st.session_state["login_realizado"] = True
 
 st.title("📦 Aplicação de Pesagem de Caminhões")
-st.markdown("Utilize o menu lateral para navegar entre as funcionalidades.")
+st.markdown("## ⬅️ Utilize o menu lateral para navegar entre as funcionalidades.")
