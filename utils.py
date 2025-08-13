@@ -72,7 +72,7 @@ def gerar_tabela_formatada(dados):
             border: 1px solid #ddd;
         }
         th {
-            background-color: #8b0000;
+            background-color: #808080;
         }
     </style>
     <table>
