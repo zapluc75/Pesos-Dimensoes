@@ -6,6 +6,7 @@ if "login_realizado" not in st.session_state:
     verificar_login()
     st.session_state["login_realizado"] = True
 
+st.info("⬅️ Utilize o menu lateral para navegar entre as funcionalidades.")
 st.title("🔍 Pesquisa Avançada de Pesagens")
 
 tabela = pd.read_csv("data/resultados.csv")
