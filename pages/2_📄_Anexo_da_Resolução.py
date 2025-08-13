@@ -7,6 +7,7 @@ if "login_realizado" not in st.session_state:
     verificar_login()
     st.session_state["login_realizado"] = True
 
+st.info("⬅️ Utilize o menu lateral para navegar entre as funcionalidades.")
 st.title("📄 Anexo da Resolução - Tipos de Caminhão")
 
 lista_jpgs = sorted(glob.glob(os.path.join("imagens", "*.jpg")))
