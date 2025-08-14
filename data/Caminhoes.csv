@@ -98,19 +98,19 @@ CTSSS5+,67000,4,25,67000,30,Sim,Veiculo Longo,Caminhao Trator + 3 Semirreboques
 CTSSS6+,67000,4,25,67000,30,Sim,Veiculo Longo,Caminhao Trator + 3 Semirreboques
 CTSSS7+,74000,4,25,74000,30,Sim,Veiculo Longo,Caminhao Trator + 3 Semirreboques
 CTSSS8+,56500,4,19.8,56500,30,Sim,Veiculo Longo,Caminhao Trator + 3 Semirreboques
-CR1+,36000,2,19.8,36000,25,S,Somente reboque ate 30 abril 2009,Caminhao + Reboque
-CR2+,43000,2,19.8,43000,25,S,Somente reboque ate 30 abril 2009,Caminhao + Reboque
-CR3+,50000,2,19.8,50000,25,S,Somente reboque ate 30 abril 2009,Caminhao + Reboque
-CR4+,43000,2,19.8,43000,25,S,Somente reboque ate 30 abril 2009,Caminhao + Reboque
-CR5+,50000,2,19.8,50000,25,S,Somente reboque ate 30 abril 2009,Caminhao + Reboque
-CR6+,57000,2,19.8,57000,25,S,Somente reboque ate 30 abril 2009,Caminhao + Reboque
-CR7+,39500,2,19.8,39500,25,S,Somente reboque ate 30 abril 2009,Caminhao + Reboque
-CR8+,46500,2,19.8,46500,25,S,Somente reboque ate 30 abril 2009,Caminhao + Reboque
-CR9+,53500,2,19.8,53500,25,S,Somente reboque ate 30 abril 2009,Caminhao + Reboque
-CR10+,49000,2,19.8,49000,25,S,Somente reboque ate 30 abril 2009,Caminhao + Reboque
-CR11+,56000,2,19.8,56000,25,S,Somente reboque ate 30 abril 2009,Caminhao + Reboque
-CR12+,45500,2,19.8,45500,25,S,Somente reboque ate 30 abril 2009,Caminhao + Reboque
-CR13+,52500,2,19.8,52500,25,S,Somente reboque ate 30 abril 2009,Caminhao + Reboque
-CTSRR1+,91000,3,28,91000,30,S,Reboque com rala,Caminhao Trator + Semirreboque + Reboque com rala
-CTSRR2+,82500,3,28,82500,30,S,Reboque com rala,Caminhao Trator + Semirreboque + Reboque com rala
-CTSRR3+,82500,3,28,82500,30,S,Reboque com rala,Caminhao Trator + Semirreboque + Reboque com rala
+CR1+,36000,2,19.8,36000,25,Sim,Somente reboque ate 30 abril 2009,Caminhao + Reboque
+CR2+,43000,2,19.8,43000,25,Sim,Somente reboque ate 30 abril 2009,Caminhao + Reboque
+CR3+,50000,2,19.8,50000,25,Sim,Somente reboque ate 30 abril 2009,Caminhao + Reboque
+CR4+,43000,2,19.8,43000,25,Sim,Somente reboque ate 30 abril 2009,Caminhao + Reboque
+CR5+,50000,2,19.8,50000,25,Sim,Somente reboque ate 30 abril 2009,Caminhao + Reboque
+CR6+,57000,2,19.8,57000,25,Sim,Somente reboque ate 30 abril 2009,Caminhao + Reboque
+CR7+,39500,2,19.8,39500,25,Sim,Somente reboque ate 30 abril 2009,Caminhao + Reboque
+CR8+,46500,2,19.8,46500,25,Sim,Somente reboque ate 30 abril 2009,Caminhao + Reboque
+CR9+,53500,2,19.8,53500,25,Sim,Somente reboque ate 30 abril 2009,Caminhao + Reboque
+CR10+,49000,2,19.8,49000,25,Sim,Somente reboque ate 30 abril 2009,Caminhao + Reboque
+CR11+,56000,2,19.8,56000,25,Sim,Somente reboque ate 30 abril 2009,Caminhao + Reboque
+CR12+,45500,2,19.8,45500,25,Sim,Somente reboque ate 30 abril 2009,Caminhao + Reboque
+CR13+,52500,2,19.8,52500,25,Sim,Somente reboque ate 30 abril 2009,Caminhao + Reboque
+CTSRR1+,91000,3,28,91000,30,Sim,Reboque com rala,Caminhao Trator + Semirreboque + Reboque com rala
+CTSRR2+,82500,3,28,82500,30,Sim,Reboque com rala,Caminhao Trator + Semirreboque + Reboque com rala
+CTSRR3+,82500,3,28,82500,30,Sim,Reboque com rala,Caminhao Trator + Semirreboque + Reboque com rala
