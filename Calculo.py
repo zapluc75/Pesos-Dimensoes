@@ -21,7 +21,7 @@ if "login_realizado" not in st.session_state: # Gate de login (mantido do projet
 # ÁREA DE CÁLCULO (migrada de pages/1_📦_Calculo.py)
 
 # Variáveis auxiliares
-pbt = limite = excesso = 0
+pbt = limite = excesso = float(0.0)
 r = {}
 
 # Carrega a tabela de caminhões
@@ -88,11 +88,11 @@ if st.session_state.validado:
                 "TipoCaminhao": tipo,
                 "Placas": ";".join(placas),
                 "TaraTotal": int(sum(taras)),
-                "PesoLiq": peso_liqnf,
+                "PesoLiqNF": peso_liqnf,
                 "Comprimento": comprimento,
-                "PBT": int(pbt),
-                "LimiteLegal": int(limite),
-                "Excesso": int(excesso),
+                "PBT-PBTC": float(pbt),
+                "LimiteLegal": float(limite),
+                "Excesso": float(excesso),
                 "Usuario": st.session_state.get("usuario_logado", "desconhecido"),
             }
             salvar_csv(dados_exportar)
@@ -114,16 +114,16 @@ if st.session_state.calculado:
     r.pop("Usuario", None)
 
     st.markdown("---")
-    st.subheader("📊 Resultado da Apuração")
-    st.markdown(gerar_tabela_formatada(r), unsafe_allow_html=True)
-
-    st.markdown("---")
     st.subheader("📘 Dados Complementares")
     st.table(pd.DataFrame([st.session_state["dados_tipo"]]))
-
+    
+    st.markdown("---")
+    st.subheader("📊 Resultado da Apuração")
+    st.markdown(gerar_tabela_formatada(r), unsafe_allow_html=True)
+   
     if r["Excesso"] > 0:
-        st.error(f"🚨 Excesso de Peso: {r['Excesso']} Kg.")
-        st.markdown(
+        st.error(f"🚨 Excesso de Peso: {r['Excesso']:.2f} Kg.")
+        st.code(
             f"""
 **Fiscalização por Nota Fiscal**  
 Classificação por eixos:  {tipo}  
@@ -131,8 +131,8 @@ De acordo com a Portaria 268/2022 do Senatran
 Semirreboque: {r["Placas"]}  
 Configuração inferior a {linha["Tam"]} metros  
 Tara: {r["TaraTotal"]:.0f} kg - (conforme plaquetas)  
-Carga: {r["PesoLiq"]:.2f} kg - (produto)  NF nº xxxxxxx  
-PBTC apurado: {r["PBT"]:.2f} kg  
+Carga: {r["PesoLiqNF"]:.2f} kg - (produto)  NF nº xxxxxxx  
+PBTC apurado: {r["PBT-PBTC"]:.2f} kg  
 Limite regulamentar: {r["LimiteLegal"]:.0f} kg  
 Excesso apurado: {r["Excesso"]:.2f} kg  
 Transportador: (transportador)  |  Expedidor: (expedidor) |  Embarcador: (embarcador)
@@ -141,9 +141,14 @@ CNPJ: (cnpj)
 Autuação realizada conforme Resolução 882/21 do CONTRAN  
 Transbordo não realizado devido indisponibilidade de meios operacionais para tal fim.
 """
-        )
+    ,language="markdown")
     else:
         st.success("✅ Peso dentro do limite.")
+
+    if (comprimento - linha["Tamax"]) > 0 or linha["AET"] == "Sim":
+        st.error(f"🚨 Combinação {tipo} de {comprimento}m *** Necessita AET *** Tamanho Máximo Permitido {linha['Tamax']:.1f}m.")
+    else:
+        st.success(f"✅ Combinação dentro do Tamanho Máximo Permitido")
 
     if st.button("🔁 Nova Apuração"):
         limpar_estado()
