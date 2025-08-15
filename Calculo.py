@@ -1,6 +1,8 @@
 import streamlit as st # Calculo.py — versão unificada (Home + Cálculo)
 import pandas as pd
 from datetime import datetime
+from st_copy import copy_button
+import textwrap
 
 from utils import (
     carregar_tabela,
@@ -123,25 +125,29 @@ if st.session_state.calculado:
    
     if r["Excesso"] > 0:
         st.error(f"🚨 Excesso de Peso: {r['Excesso']:.2f} Kg.")
-        st.code(
-            f"""
-**Fiscalização por Nota Fiscal**  
-Classificação por eixos:  {tipo}  
-De acordo com a Portaria 268/2022 do Senatran  
-Semirreboque: {r["Placas"]}  
-Configuração inferior a {linha["Tam"]} metros  
-Tara: {r["TaraTotal"]:.0f} kg - (conforme plaquetas)  
-Carga: {r["PesoLiqNF"]:.2f} kg - (produto)  NF nº xxxxxxx  
-PBTC apurado: {r["PBT-PBTC"]:.2f} kg  
-Limite regulamentar: {r["LimiteLegal"]:.0f} kg  
-Excesso apurado: {r["Excesso"]:.2f} kg  
-Transportador: (transportador)  |  Expedidor: (expedidor) |  Embarcador: (embarcador)
-CNPJ: (cnpj)  
+        
+        texto = textwrap.dedent(f"""\
+        **Fiscalização por Nota Fiscal**  
+        Classificação por eixos:  {tipo}  
+        De acordo com a Portaria 268/2022 do Senatran  
+        Semirreboque: {r["Placas"]}  
+        Configuração inferior a {linha["Tam"]:.1f} metros  
+        Tara: {r["TaraTotal"]:.0f} kg - (conforme plaquetas)  
+        Carga: {r["PesoLiqNF"]:.2f} kg - (produto)  NF nº xxxxxxx  
+        PBTC apurado: {r["PBT-PBTC"]:.2f} kg  
+        Limite regulamentar: {r["LimiteLegal"]:.0f} kg  
+        Excesso apurado: {r["Excesso"]:.2f} kg  
+        Transportador: (transportador)  |  Expedidor: (expedidor) |  Embarcador: (embarcador)
+        CNPJ: (cnpj)  
 
-Autuação realizada conforme Resolução 882/21 do CONTRAN  
-Transbordo não realizado devido indisponibilidade de meios operacionais para tal fim.
-"""
-    ,language="markdown")
+        Autuação realizada conforme Resolução 882/21 do CONTRAN  
+        Transbordo não realizado devido indisponibilidade de meios operacionais para tal fim.
+        """)
+            
+        st.markdown(texto) # 1) Exibir na tela com formatação Markdown
+
+        copy_button(texto, tooltip="Copiar", copied_label="✅ Copiado!") # 2) Botão para copiar
+            
     else:
         st.success("✅ Peso dentro do limite.")
 
