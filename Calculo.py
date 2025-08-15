@@ -101,7 +101,7 @@ if st.session_state.validado:
             st.session_state.resultado = dados_exportar
             st.session_state["dados_tipo"] = {
                 "TipoCam": tipo,
-                "TamMaxPermitido": f"{linha['Tamax']:.1f}",
+                "TamMaxPermit": f"{linha['Tamax']:.1f}",
                 "AET": linha["AET"],
                 "OBS": linha["OBS"],
             }
