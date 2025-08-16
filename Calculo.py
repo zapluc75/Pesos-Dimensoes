@@ -133,7 +133,7 @@ if st.session_state.calculado:
         **Fiscalização por Nota Fiscal**  
         Classificação por eixos:  {tipo}  
         De acordo com a Portaria 268/2022 do Senatran  
-        Semirreboque: {r["Placas"]}  
+        Veículo/Combinação: {r["Placas"]}  
         Configuração inferior a {linha["Tam"]:.1f} metros  
         Tara: {r["TaraTotal"]:.0f} kg - (conforme plaquetas)  
         Carga: {r["PesoLiqNF"]:.2f} kg - (produto)  NF nº xxxxxxx  
