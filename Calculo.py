@@ -14,7 +14,7 @@ from utils import (
     gerar_tabela_formatada,
 )
 
-st.set_page_config(page_title="📦 Apuração Pesos e Dimensões - DER DF", page_icon="📦", layout="wide")
+st.set_page_config(page_title="📦 Apuração Pesos e Dimensões - DERDF", page_icon="📦", layout="wide")
 
 if "login_realizado" not in st.session_state: # Gate de login (mantido do projeto original)
     verificar_login()
@@ -30,7 +30,7 @@ r = {}
 tabela = carregar_tabela("data/Caminhoes.csv")
 
 st.info("⬅️ Utilize o menu lateral para navegar entre as funcionalidades.")
-st.title("📦 Apuração Pesos e Dimensões - DER DF")
+st.title("📦 Apuração Pesos e Dimensões - DERDF")
 
 # Seletor do tipo + entradas principais
 col1, col2, col3 = st.columns(3)
