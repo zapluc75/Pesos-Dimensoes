@@ -79,10 +79,13 @@ if st.button("✅ Validar Dado(s)"):
 
 # Cálculo
 if st.session_state.validado:
-    if st.button("🔄 Calcular"):
-        if not all(placas) or any(t == 0 for t in taras) or peso_liqnf == 0:
-            st.error("⚠️ Preencha corretamente todos os campos.")
-        else:
+    if not all(placas) or any(t == 0 for t in taras) or peso_liqnf == 0:
+        st.error("⚠️ Preencha corretamente todos os campos.")
+    else:
+        col_left, col_center, col_right = st.columns([1, 1, 1]) # Botão centralizado usando colunas
+        with col_center:
+            calc_click = st.button ("❌ C A L C U L A R ", use_container_width=True)
+        if calc_click: 
             pbt, limite, excesso = calcular_excesso(linha, taras, peso_liqnf, comprimento)
             agora = datetime.now().strftime("%d-%m-%Y %H:%M:%S")
             dados_exportar = {
