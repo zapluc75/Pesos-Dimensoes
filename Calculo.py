@@ -30,7 +30,7 @@ r = {}
 tabela = carregar_tabela("data/Caminhoes.csv")
 
 st.info("⬅️ Utilize o menu lateral para navegar entre as funcionalidades.")
-st.title("📦 Apuração de Pesos e Dimensões - DER DF")
+st.title("📦 Apuração Pesos e Dimensões - DER DF")
 
 # Seletor do tipo + entradas principais
 col1, col2, col3 = st.columns(3)
@@ -45,7 +45,7 @@ with col3:
 linha = tabela[tabela["Codigo"] == tipo].iloc[0]
 qt_tara = int(linha["Qtara"])
 nome_caminhao = linha["Nome"]
-st.info(f"Tipo Selecionado | **{nome_caminhao}** |")
+st.info(f"Selecionado -> **{nome_caminhao}**")
 
 # Entradas por unidade (placa + tara)
 placas = []
