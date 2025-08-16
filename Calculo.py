@@ -14,7 +14,7 @@ from utils import (
     gerar_tabela_formatada,
 )
 
-st.set_page_config(page_title="📦 Apuração de Pesos e Dimensões - DER DF", page_icon="📦", layout="wide")
+st.set_page_config(page_title="📦 Apuração Pesos e Dimensões - DER DF", page_icon="📦", layout="wide")
 
 if "login_realizado" not in st.session_state: # Gate de login (mantido do projeto original)
     verificar_login()
@@ -45,7 +45,7 @@ with col3:
 linha = tabela[tabela["Codigo"] == tipo].iloc[0]
 qt_tara = int(linha["Qtara"])
 nome_caminhao = linha["Nome"]
-st.info(f"Tipo Selecionado: **{nome_caminhao}**")
+st.info(f"Tipo Selecionado | **{nome_caminhao}** |")
 
 # Entradas por unidade (placa + tara)
 placas = []
