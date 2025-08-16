@@ -159,6 +159,10 @@ if st.session_state.calculado:
     else:
         st.success(f"✅ Combinação dentro do Tamanho Máximo Permitido")
 
-    if st.button("🔁 Nova Apuração"):
+    col_l, col_c, col_r = st.columns([1, 1, 1])  # Botão centralizado usando colunas
+    with col_c:
+        reset_click = st.button(" 🔁 N O V A - A P U R A Ç Ã O", use_container_width=True)
+
+    if reset_click:
         limpar_estado()
         st.rerun()
