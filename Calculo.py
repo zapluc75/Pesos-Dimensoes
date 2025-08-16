@@ -79,7 +79,7 @@ if st.button("✅ Validar Dado(s)"):
 
 # Cálculo
 if st.session_state.validado:
-    if st.button("Calcular"):
+    if st.button("🔄 Calcular"):
         if not all(placas) or any(t == 0 for t in taras) or peso_liqnf == 0:
             st.error("⚠️ Preencha corretamente todos os campos.")
         else:
