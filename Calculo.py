@@ -30,7 +30,7 @@ r = {}
 tabela = carregar_tabela("data/Caminhoes.csv")
 
 st.info("⬅️ Utilize o menu lateral para navegar entre as funcionalidades.")
-st.title("📦 Apuração Pesos e Dimensões - DERDF")
+st.title("📦 Apuração Pesos e Dimensões - DER DF")
 
 # Seletor do tipo + entradas principais
 col1, col2, col3 = st.columns(3)
