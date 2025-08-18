@@ -121,10 +121,10 @@ else:
                 st.session_state.entradas.pop()
                 st.session_state.tabela_key += 1
                 if hasattr(st, "toast"):
-                st.toast("Última entrada removida.")
-            else:
-                st.success("Última entrada removida.")
-            st.rerun()  # força a página a redesenhar já limpa
+                    st.toast("Última entrada removida.")
+                else:
+                    st.success("Última entrada removida.")
+                st.rerun()  # força a página a redesenhar já limpa
         
     with b2:
         if st.button("🧹 Limpar tudo", use_container_width=True):
@@ -157,6 +157,7 @@ else:
 
 # --------- Rodapé ---------
 st.caption("Dica: verifique os dados antes de finalizar o registro.")
+
 
 
 
