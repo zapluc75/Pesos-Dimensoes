@@ -25,7 +25,8 @@ def _assina(oper: str) -> int:
 def _calc_totais(df: pd.DataFrame) -> tuple[float, int]:
     if df.empty:
         return 0.0, 0
-    total = int((df["Peso (kg)"] * df["Sinal"]).sum())
+    total = (df["Peso (kg)"] * df["Sinal"]).sum()
+    total = float(total) #garantir float, sem truncar
     cont_nf = int((df["Operação"] == "+").sum())  # segue a lógica do seu script: só soma NF quando é adição
     return total, cont_nf
 
@@ -146,7 +147,7 @@ else:
     sub_total, sub_copy = m2.columns([2, 2])
     sub_total.metric("Total Peso Líquido (kg)", total)
 
-    with sub_copy: # garante que o botão fique pequeno e à direita do número
+    with sub_copy: # garante que o botão fique pequeno e à esquerda do número
         st.markdown("<div style='text-align:left'>", unsafe_allow_html=True)
         copy_button(str(total), tooltip="Copiar total (pt-BR)", copied_label="✅ Copiado!")
         st.markdown("</div>", unsafe_allow_html=True)
@@ -158,6 +159,7 @@ else:
 
 # --------- Rodapé ---------
 st.caption("Dica: verifique os dados antes de finalizar o registro.")
+
 
 
 
