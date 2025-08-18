@@ -119,7 +119,11 @@ else:
         if st.button("🧹 Limpar tudo", use_container_width=True):
             st.session_state.entradas = []
             st.session_state.tabela_key += 1
-            st.toast("Tabela zerada.")
+            if hasattr(st, "toast"):
+                st.toast("Tabela zerada.")
+            else:
+                st.success("Tabela zerada.")
+            st.rerun()  # força a página a redesenhar já limpa
     with b2:
         if st.button("↩️ Desfazer última", use_container_width=True):
             if st.session_state.entradas:
@@ -159,6 +163,7 @@ else:
 
 # --------- Rodapé ---------
 st.caption("Dica: verifique os dados antes de finalizar o registro.")
+
 
 
 
