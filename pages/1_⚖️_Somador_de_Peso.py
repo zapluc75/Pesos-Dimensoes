@@ -112,6 +112,31 @@ else:
     edited_df = edited_df.assign(Sinal=edited_df["Operação"].apply(lambda x: 1 if str(x).strip()=="+" else -1))
     _set_dataframe(edited_df)
 
+     # Botões de ação abaixo da tabela
+    b1, b2, b3 = st.columns([1, 1, 1])
+    with b1:
+        if st.button("🧹 Limpar tudo", use_container_width=True):
+            st.session_state.entradas = []
+            st.session_state.tabela_key += 1
+            st.toast("Tabela zerada.")
+    with b2:
+        if st.button("↩️ Desfazer última", use_container_width=True):
+            if st.session_state.entradas:
+                st.session_state.entradas.pop()
+                st.session_state.tabela_key += 1
+                st.toast("Última entrada removida.")
+    with b3:
+        # Botão de download sempre disponível quando há entradas
+        df_export = df.drop(columns=["Sinal"]).copy()
+        csv = df_export.to_csv(index=False, sep=";", decimal=",")
+        st.download_button(
+            label="💾 Baixar CSV",
+            data=csv.encode("utf-8-sig"),
+            file_name="somatorio_pesos.csv",
+            mime="text/csv",
+            use_container_width=True,
+        )
+
    # --------- Métricas ---------
     df_atual = _get_dataframe()
     total, cont_nf = _calc_totais(df_atual)
@@ -130,31 +155,8 @@ else:
     st.success(
         f"Resultado do Peso Líquido da(s) Nota(s) Fiscal(is): **{total:.2f} kg** — Quantidade NF(s): **{cont_nf}**"
     )
- # Botões de ação abaixo da tabela
-b1, b2, b3 = st.columns([1, 1, 1])
-with b1:
-    if st.button("🧹 Limpar tudo", use_container_width=True):
-        st.session_state.entradas = []
-        st.session_state.tabela_key += 1
-        st.toast("Tabela zerada.")
-with b2:
-    if st.button("↩️ Desfazer última", use_container_width=True):
-        if st.session_state.entradas:
-            st.session_state.entradas.pop()
-            st.session_state.tabela_key += 1
-            st.toast("Última entrada removida.")
-with b3:
-    # Botão de download sempre disponível quando há entradas
-    df_export = df.drop(columns=["Sinal"]).copy()
-    csv = df_export.to_csv(index=False, sep=";", decimal=",")
-    st.download_button(
-        label="💾 Baixar CSV",
-        data=csv.encode("utf-8-sig"),
-        file_name="somatorio_pesos.csv",
-        mime="text/csv",
-        use_container_width=True,
-    )
 
 # --------- Rodapé ---------
 st.caption("Dica: verifique os dados antes de finalizar o registro.")
+
 
