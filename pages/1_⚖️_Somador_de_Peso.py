@@ -64,7 +64,7 @@ with st.form("form_entrada", clear_on_submit=True):
         sugestao_nf = str(len([e for e in st.session_state.entradas if e["Operação"] == "+"]) + 1).zfill(3)
         nf = st.text_input("Nº da Nota Fiscal (opcional)", value=sugestao_nf)
     with c2:
-        oper = st.radio("Operação", options=[":green[➕ Ad]", ":red[➖ Sb]"], horizontal=True)
+        oper = st.radio("Operação", options=[":green[➕ ad]", ":red[➖ sb]"], horizontal=True)
         oper = "+" if "➕" in oper else "-"
     with c3:
         peso = st.number_input("Peso (kg)", min_value=0.0, step=0.01, format="%.2f")
@@ -158,5 +158,6 @@ else:
 
 # --------- Rodapé ---------
 st.caption("Dica: verifique os dados antes de finalizar o registro.")
+
 
 
