@@ -1,0 +1,163 @@
+import streamlit as st
+import pandas as pd
+from st_copy import copy_button
+
+# --------- Configuração da página ---------
+st.set_page_config(
+    page_title="Somador de Peso Líquido",
+    page_icon="⚖️",
+    layout="centered",
+)
+
+# --------- Estado da aplicação ---------
+if "entradas" not in st.session_state:
+    st.session_state.entradas = []  # lista de dicts: {nf, oper, peso}
+if "tabela_key" not in st.session_state:
+    st.session_state.tabela_key = 0
+
+# --------- Funções utilitárias ---------
+
+def _assina(oper: str) -> int:
+    return 1 if oper == "+" else -1
+
+
+def _calc_totais(df: pd.DataFrame) -> tuple[float, int]:
+    if df.empty:
+        return 0.0, 0
+    total = float((df["Peso (kg)"] * df["Sinal"]).sum())
+    cont_nf = int((df["Operação"] == "+").sum())  # segue a lógica do seu script: só soma NF quando é adição
+    return total, cont_nf
+
+
+def _get_dataframe() -> pd.DataFrame:
+    if not st.session_state.entradas:
+        return pd.DataFrame(columns=["NF", "Operação", "Peso (kg)", "Sinal"])
+    df = pd.DataFrame(st.session_state.entradas)
+    # Garante tipos e ordem
+    df = df[["NF", "Operação", "Peso (kg)", "Sinal"]]
+    return df
+
+
+def _set_dataframe(df: pd.DataFrame) -> None:
+    # Atualiza o estado a partir do DataFrame (pós-edição)
+    entradas = []
+    for _, row in df.iterrows():
+        oper = "+" if str(row["Operação"]).strip() == "+" else "-"
+        peso = float(row["Peso (kg)"]) if pd.notna(row["Peso (kg)"]) else 0.0
+        nf = str(row["NF"]).strip()
+        entradas.append({"NF": nf, "Operação": oper, "Peso (kg)": peso, "Sinal": _assina(oper)})
+    st.session_state.entradas = entradas
+
+
+def format_ptbr(n: float) -> str:
+    s = f"{n:,.2f}"
+    return s.replace(",", "X").replace(".", ",").replace("X", ".")
+
+# --------- Cabeçalho ---------
+st.title("⚖️ Somador de Peso Líquido de Notas Fiscais")
+st.caption(
+    "Adicione entradas de peso (+) ou subtrações (-). O contador de NFs segue o seu script original: **somente** entradas com operação `+` contam como NF."
+)
+
+# --------- Formulário de entrada ---------
+with st.form("form_entrada", clear_on_submit=True):
+    st.subheader("Nova entrada")
+    c1, c2, c3 = st.columns([1.2, 1, 1.2])
+    with c1:
+        # Sugere NF sequencial (apenas sugestão; pode ser vazio)
+        sugestao_nf = str(len([e for e in st.session_state.entradas if e["Operação"] == "+"]) + 1).zfill(3)
+        nf = st.text_input("Nº da Nota Fiscal (opcional)", value=sugestao_nf)
+    with c2:
+        oper = st.radio("Operação", options=[":green[➕ Ad]", ":red[➖ Sb]"], horizontal=True)
+        oper = "+" if "➕" in oper else "-"
+    with c3:
+        peso = st.number_input("Peso (kg)", min_value=0.0, step=0.01, format="%.2f")
+
+    c_bot1, c_bot2, c_bot3 = st.columns([1, 1, 1])
+    with c_bot2:
+        submitted = st.form_submit_button("Registrar", use_container_width=True)
+
+    if submitted:
+        if peso <= 0:
+            st.warning("Informe um peso maior que zero.")
+        else:
+            st.session_state.entradas.append({
+                "NF": nf.strip(),
+                "Operação": oper,
+                "Peso (kg)": float(peso),
+                "Sinal": _assina(oper),
+            })
+            st.session_state.tabela_key += 1
+            st.success("Entrada registrada.")
+
+# --------- Tabela (editável) ---------
+st.subheader("Entradas")
+df = _get_dataframe()
+
+if df.empty:
+    st.info("Nenhuma entrada ainda. Use o formulário acima para começar.")
+else:
+    st.caption("Você pode **editar** NF, operação (+/-) e peso diretamente na tabela. As métricas são recalculadas automaticamente.")
+    # Data editor configurado
+    edited_df = st.data_editor(
+        df.drop(columns=["Sinal"]).assign(**{"Operação": df["Operação"].astype(str)}),
+        num_rows="dynamic",
+        key=f"editor_{st.session_state.tabela_key}",
+        use_container_width=True,
+        hide_index=True,
+        column_config={
+            "NF": st.column_config.TextColumn("NF", help="Identificação da nota (opcional)"),
+            "Operação": st.column_config.SelectboxColumn("Operação", options=["+", "-"], help="+ adiciona, - subtrai"),
+            "Peso (kg)": st.column_config.NumberColumn("Peso (kg)", min_value=0.0, step=0.01, format="%.2f"),
+        },
+    )
+
+    # Reconstrói o estado a partir da edição
+    edited_df = edited_df.assign(Sinal=edited_df["Operação"].apply(lambda x: 1 if str(x).strip()=="+" else -1))
+    _set_dataframe(edited_df)
+
+   # --------- Métricas ---------
+    df_atual = _get_dataframe()
+    total, cont_nf = _calc_totais(df_atual)
+
+    m1, m2 = st.columns([1, 1.2])
+    m1.metric("Quantidade de NF(s)", cont_nf)
+    sub_total, sub_copy = m2.columns([2, 2])
+    sub_total.metric("Total Peso Líquido (kg)", format_ptbr(total))
+
+    with sub_copy: # garante que o botão fique pequeno e à direita do número
+        st.markdown("<div style='text-align:left'>", unsafe_allow_html=True)
+        copy_button(format_ptbr(total), tooltip="Copiar total (pt-BR)", copied_label="✅ Copiado!")
+        st.markdown("</div>", unsafe_allow_html=True)
+
+    # --------- Resumo ---------
+    st.success(
+        f"Resultado do Peso Líquido da(s) Nota(s) Fiscal(is): **{format_ptbr(total)} kg** — Quantidade NF(s): **{cont_nf}**"
+    )
+ # Botões de ação abaixo da tabela
+b1, b2, b3 = st.columns([1, 1, 1])
+with b1:
+    if st.button("🧹 Limpar tudo", use_container_width=True):
+        st.session_state.entradas = []
+        st.session_state.tabela_key += 1
+        st.toast("Tabela zerada.")
+with b2:
+    if st.button("↩️ Desfazer última", use_container_width=True):
+        if st.session_state.entradas:
+            st.session_state.entradas.pop()
+            st.session_state.tabela_key += 1
+            st.toast("Última entrada removida.")
+with b3:
+    # Botão de download sempre disponível quando há entradas
+    df_export = df.drop(columns=["Sinal"]).copy()
+    csv = df_export.to_csv(index=False, sep=";", decimal=",")
+    st.download_button(
+        label="💾 Baixar CSV",
+        data=csv.encode("utf-8-sig"),
+        file_name="somatorio_pesos.csv",
+        mime="text/csv",
+        use_container_width=True,
+    )
+
+# --------- Rodapé ---------
+st.caption("Dica: verifique os dados antes de finalizar o registro.")
