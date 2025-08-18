@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 from st_copy import copy_button
+total=0
 
 # --------- Configuração da página ---------
 st.set_page_config(
@@ -24,7 +25,7 @@ def _assina(oper: str) -> int:
 def _calc_totais(df: pd.DataFrame) -> tuple[float, int]:
     if df.empty:
         return 0.0, 0
-    total = float((df["Peso (kg)"] * df["Sinal"]).sum())
+    total = int((df["Peso (kg)"] * df["Sinal"]).sum())
     cont_nf = int((df["Operação"] == "+").sum())  # segue a lógica do seu script: só soma NF quando é adição
     return total, cont_nf
 
@@ -47,11 +48,6 @@ def _set_dataframe(df: pd.DataFrame) -> None:
         nf = str(row["NF"]).strip()
         entradas.append({"NF": nf, "Operação": oper, "Peso (kg)": peso, "Sinal": _assina(oper)})
     st.session_state.entradas = entradas
-
-
-def format_ptbr(n: float) -> str:
-    s = f"{n:,.2f}"
-    return s.replace(",", "X").replace(".", ",").replace("X", ".")
 
 # --------- Cabeçalho ---------
 st.title("⚖️ Somador de Peso Líquido de Notas Fiscais")
@@ -123,16 +119,16 @@ else:
     m1, m2 = st.columns([1, 1.2])
     m1.metric("Quantidade de NF(s)", cont_nf)
     sub_total, sub_copy = m2.columns([2, 2])
-    sub_total.metric("Total Peso Líquido (kg)", format_ptbr(total))
+    sub_total.metric("Total Peso Líquido (kg)", total)
 
     with sub_copy: # garante que o botão fique pequeno e à direita do número
         st.markdown("<div style='text-align:left'>", unsafe_allow_html=True)
-        copy_button(format_ptbr(total), tooltip="Copiar total (pt-BR)", copied_label="✅ Copiado!")
+        copy_button(str(total), tooltip="Copiar total (pt-BR)", copied_label="✅ Copiado!")
         st.markdown("</div>", unsafe_allow_html=True)
 
     # --------- Resumo ---------
     st.success(
-        f"Resultado do Peso Líquido da(s) Nota(s) Fiscal(is): **{format_ptbr(total)} kg** — Quantidade NF(s): **{cont_nf}**"
+        f"Resultado do Peso Líquido da(s) Nota(s) Fiscal(is): **{total:.2f} kg** — Quantidade NF(s): **{cont_nf}**"
     )
  # Botões de ação abaixo da tabela
 b1, b2, b3 = st.columns([1, 1, 1])
@@ -161,3 +157,4 @@ with b3:
 
 # --------- Rodapé ---------
 st.caption("Dica: verifique os dados antes de finalizar o registro.")
+
