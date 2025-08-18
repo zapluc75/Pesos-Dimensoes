@@ -114,29 +114,29 @@ else:
     _set_dataframe(edited_df)
 
      # Botões de ação abaixo da tabela
-    b1, b2, b3 = st.columns([1, 1, 1])
-    with b1:
-        if st.button("🧹 Limpar tudo", use_container_width=True):
-            st.session_state.entradas = []
+b1, b2, b3 = st.columns([1, 1, 1])
+with b1:
+    if st.button("🧹 Limpar tudo", use_container_width=True):
+        st.session_state.entradas = []
+        st.session_state.tabela_key += 1
+        st.toast("Tabela zerada.")
+with b2:
+    if st.button("↩️ Desfazer última", use_container_width=True):
+        if st.session_state.entradas:
+            st.session_state.entradas.pop()
             st.session_state.tabela_key += 1
-            st.toast("Tabela zerada.")
-    with b2:
-        if st.button("↩️ Desfazer última", use_container_width=True):
-            if st.session_state.entradas:
-                st.session_state.entradas.pop()
-                st.session_state.tabela_key += 1
-                st.toast("Última entrada removida.")
-    with b3:
-        # Botão de download sempre disponível quando há entradas
-        df_export = df.drop(columns=["Sinal"]).copy()
-        csv = df_export.to_csv(index=False, sep=";", decimal=",")
-        st.download_button(
-            label="💾 Baixar CSV",
-            data=csv.encode("utf-8-sig"),
-            file_name="somatorio_pesos.csv",
-            mime="text/csv",
-            use_container_width=True,
-        )
+            st.toast("Última entrada removida.")
+with b3:
+    # Botão de download sempre disponível quando há entradas
+    df_export = df.drop(columns=["Sinal"]).copy()
+    csv = df_export.to_csv(index=False, sep=";", decimal=",")
+    st.download_button(
+        label="💾 Baixar CSV",
+        data=csv.encode("utf-8-sig"),
+        file_name="somatorio_pesos.csv",
+        mime="text/csv",
+        use_container_width=True,
+    )
 
    # --------- Métricas ---------
     df_atual = _get_dataframe()
@@ -159,6 +159,7 @@ else:
 
 # --------- Rodapé ---------
 st.caption("Dica: verifique os dados antes de finalizar o registro.")
+
 
 
 
