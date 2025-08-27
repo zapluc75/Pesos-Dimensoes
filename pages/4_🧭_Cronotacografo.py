@@ -1,8 +1,10 @@
 import streamlit as st
+import pandas as pd
 
 from utils import (
     validar_placa,
     limpar_estado,
+    verificar_login,
 )
 
 def precisa_tacografo(placa: str, ano: int, cmt: int, pbt: int) -> bool:
@@ -18,8 +20,12 @@ def precisa_tacografo(placa: str, ano: int, cmt: int, pbt: int) -> bool:
         return True
     return False
 
-st.set_page_config(page_title="Verificador de Tacógrafo", page_icon="🧭", layout="centered")
+if "login_realizado" not in st.session_state:
+    verificar_login()
+    st.session_state["login_realizado"] = True
 
+st.set_page_config(page_title="Verificador de Tacógrafo", page_icon="🧭", layout="centered")
+st.info("⬅️ Utilize o menu lateral para navegar entre as funcionalidades.")
 st.title("🧭 Verificador de Tacógrafo para Caminhões")
 
 with st.form("form_tacografo", clear_on_submit=False):
