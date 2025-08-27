@@ -1,7 +1,12 @@
 import streamlit as st
 import pandas as pd
 from st_copy import copy_button
+from utils import verificar_login
 total=0
+
+if "login_realizado" not in st.session_state:
+    verificar_login()
+    st.session_state["login_realizado"] = True
 
 # --------- Configuração da página ---------
 st.set_page_config(
@@ -51,6 +56,7 @@ def _set_dataframe(df: pd.DataFrame) -> None:
     st.session_state.entradas = entradas
 
 # --------- Cabeçalho ---------
+st.info("⬅️ Utilize o menu lateral para navegar entre as funcionalidades.")
 st.title("⚖️ Somador de Peso Líquido de Notas Fiscais")
 st.caption(
     "Adicione entradas de peso (+) ou subtrações (-). O contador de NFs segue o seu script original: **somente** entradas com operação `+` contam como NF."
@@ -157,6 +163,7 @@ else:
 
 # --------- Rodapé ---------
 st.caption("Dica: verifique os dados antes de finalizar o registro.")
+
 
 
 
