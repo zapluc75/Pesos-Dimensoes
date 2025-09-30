@@ -15,15 +15,20 @@ nomes_arquivos = [os.path.basename(f) for f in lista_jpgs]
 
 selecionado = None #Variável para armazenar seleção
 num_colunas = 6
+st.success("🚚 Clique em um modelo para visualizar em destaque!")
 
 for i in range(0, len(nomes_arquivos), num_colunas): #Cria pares de elementos (2 por linha)
     cols = st.columns(num_colunas)
 
     for j in range (num_colunas):
         if i + j < len(nomes_arquivos):
+            caminho_img = lista_jpgs[i + j]
+            nome = nomes_arquivos[i + j]
             with cols[j]:
-                if st.button(nomes_arquivos[i + j]):
-                    selecionado = nomes_arquivos[i + j]
+                if st.button("", key=nome):
+                    selecionado = nome
+                st.image(caminho_img, caption=nome, use_container_width=True)
 if selecionado:
     caminho_img = os.path.join("imagens", selecionado)
-    st.image(caminho_img, caption=selecionado, use_container_width=True)
+    st.markdown("---")
+    st.image(caminho_img, caption=formatar_nome(selecionado), use_container_width=True)
