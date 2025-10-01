@@ -16,7 +16,7 @@ tabela["Mes"] = tabela["DataHora"].dt.month
 usuario = st.session_state.get("usuario_logado")
 
 # Admin vê tudo, outros veem só o que lançaram
-if usuario != "admin":
+if usuario != "Admin":
     tabela = tabela[tabela["Usuario"] == usuario]
 
 meses = sorted(tabela["Mes"].unique())
