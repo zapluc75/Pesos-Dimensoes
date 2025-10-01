@@ -38,11 +38,12 @@ for i in range(0, len(nomes_arquivos), num_colunas):
             nome_original = nomes_arquivos[i + j]
             prefixo, sufixo = dividir_nome(nome_original)
             with cols[j]:
-               selecionado = nome_original
+                if st.button(prefixo, key=nome_original):
+                    selecionado = nome_original
                 if sufixo:  # só mostra legenda se existir
                     st.caption(sufixo)
-st.success("🚚 Clique em um modelo ou use a lista suspensa para visualizar em destaque!")
 
+st.success("🚚 Clique em um modelo ou use a lista suspensa para visualizar em destaque!")
 if selecionado:
     caminho_img = os.path.join("imagens", selecionado)
     st.markdown("---")
