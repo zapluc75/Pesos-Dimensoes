@@ -10,13 +10,14 @@ if "login_realizado" not in st.session_state:
     
 # --- Funções auxiliares ---
 def formatar_nome(nome):
-    """Remove extensão e ajusta underscores para exibir bonito."""
-    return os.path.splitext(nome)[0].replace("_", " ").title()
+    """Remove extensão, ajusta underscores e retorna só até o primeiro espaço."""
+    base = os.path.splitext(nome)[0].replace("_", " ")
+    return base.split(" ")[0]
 
 # --- Cabeçalho ---
 st.title("📄 Anexo da Resolução - Tipos de Caminhão")
 st.info("⬅️ Use o menu lateral para navegar entre as funcionalidades.")
-st.success("🚚 Clique em um modelo ou use a lista suspensa para visualizar em destaque!")
+st.markdown("---")
 
 # --- Lista de imagens ---
 lista_jpgs = sorted(glob.glob(os.path.join("imagens", "*.jpg")))
