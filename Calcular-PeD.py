@@ -79,7 +79,7 @@ if st.button("✅ Validar Dado(s)"):
 
 # Cálculo
 if st.session_state.validado:
-    if not all(placas) or any(t == 0 for t in taras) or peso_liqnf == 0:
+    if not all(placas) or sum(taras) <= 0 or peso_liqnf == 0:
         st.error("⚠️ Preencha corretamente todos os campos.")
     else:
         col_left, col_center, col_right = st.columns([1, 1, 1]) # Botão centralizado usando colunas
