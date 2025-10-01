@@ -9,10 +9,13 @@ if "login_realizado" not in st.session_state:
     st.session_state["login_realizado"] = True
     
 # --- Funções auxiliares ---
-def formatar_nome(nome):
-    """Remove extensão, ajusta underscores e retorna só até o primeiro espaço."""
+def dividir_nome(nome):
+    """Separa em prefixo (antes do 1º espaço) e sufixo (restante)."""
     base = os.path.splitext(nome)[0].replace("_", " ")
-    return base.split(" ")[0]
+    partes = base.split(" ", 1)  # divide só no primeiro espaço
+    prefixo = partes[0]
+    sufixo = partes[1] if len(partes) > 1 else ""
+    return prefixo, sufixo
 
 # --- Cabeçalho ---
 st.title("📄 Anexo da Resolução - Tipos de Caminhão")
@@ -32,9 +35,12 @@ for i in range(0, len(nomes_arquivos), num_colunas):
     cols = st.columns(num_colunas)
     for j in range(num_colunas):
         if i + j < len(nomes_arquivos):
-           with cols[j]:
-               if st.button(nomes_formatados[i + j]):
-                   selecionado = nomes_arquivos[i + j]
+            nome_original = nomes_arquivos[i + j]
+            prefixo, sufixo = dividir_nome(nome_original)
+            with cols[j]:
+               selecionado = nome_original
+                if sufixo:  # só mostra legenda se existir
+                    st.caption(sufixo)
 st.success("🚚 Clique em um modelo ou use a lista suspensa para visualizar em destaque!")
 
 if selecionado:
