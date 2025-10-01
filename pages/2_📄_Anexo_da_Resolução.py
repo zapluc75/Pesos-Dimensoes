@@ -25,7 +25,6 @@ st.markdown("---")
 # --- Lista de imagens ---
 lista_jpgs = sorted(glob.glob(os.path.join("imagens", "*.jpg")))
 nomes_arquivos = [os.path.basename(f) for f in lista_jpgs]
-nomes_formatados = [formatar_nome(f) for f in nomes_arquivos]
 
 # --- Grid de imagens (miniaturas clicáveis) ---
 num_colunas = 6
