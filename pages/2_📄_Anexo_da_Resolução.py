@@ -33,7 +33,7 @@ for i in range(0, len(nomes_arquivos), num_colunas):
     for j in range(num_colunas):
         if i + j < len(nomes_arquivos):
            with cols[j]:
-               if st.button(nomes_arquivos[i + j]):
+               if st.button(nomes_formatados[i + j]):
                    selecionado = nomes_arquivos[i + j]
 st.success("🚚 Clique em um modelo ou use a lista suspensa para visualizar em destaque!")
 
