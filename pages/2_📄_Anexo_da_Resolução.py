@@ -42,7 +42,7 @@ for i in range(0, len(nomes_arquivos), num_colunas):
                 if sufixo:  # só mostra legenda se existir
                     st.caption(sufixo)
 
-st.success("🚚 Clique em um modelo ou use a lista suspensa para visualizar em destaque!")
+st.success("🚚 Clique em um botão acima para visualizar em destaque abaixo! 👇")
 if selecionado:
     caminho_img = os.path.join("imagens", selecionado)
     st.markdown("---")
