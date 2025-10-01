@@ -38,5 +38,5 @@ for i in range(0, len(nomes_arquivos), num_colunas):
 if selecionado:
     caminho_img = os.path.join("imagens", selecionado)
     st.markdown("---")
-    st.image(caminho_img, caption=formatar_nome(selecionado), use_container_width=True)
+    st.image(caminho_img, caption=selecionado, use_container_width=True)
 
