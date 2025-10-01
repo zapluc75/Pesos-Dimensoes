@@ -136,10 +136,10 @@ if st.session_state.calculado:
         Veículo/Combinação: {r["Placas"]}  
         Configuração inferior a {linha["Tam"]:.1f} metros  
         Tara: {r["TaraTotal"]:.0f} kg - (conforme plaquetas)  
-        Carga: {r["PesoLiqNF"]:.2f} kg - (produto)  NF nº xxxxxxx  
-        PBTC apurado: {r["PBT-PBTC"]:.2f} kg  
+        Carga: {r["PesoLiqNF"]:.0f} kg - (produto)  NF nº xxxxxxx  
+        PBTC apurado: {r["PBT-PBTC"]:.0f} kg  
         Limite regulamentar: {r["LimiteLegal"]:.0f} kg  
-        Excesso apurado: {r["Excesso"]:.2f} kg  
+        Excesso apurado: {r["Excesso"]:.0f} kg  
         Transportador: (transportador)  |  Expedidor: (expedidor) |  Embarcador: (embarcador)
         CNPJ: (cnpj)  
 
