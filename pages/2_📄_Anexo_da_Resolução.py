@@ -11,7 +11,7 @@ if "login_realizado" not in st.session_state:
 # --- Funções auxiliares ---
 def formatar_nome(nome):
     """Remove extensão e ajusta underscores para exibir bonito."""
-    return os.path.splitext(nome)[0].replace("_").title()
+    return os.path.splitext(nome)[0].replace("_", " ").title()
 
 # --- Cabeçalho ---
 st.title("📄 Anexo da Resolução - Tipos de Caminhão")
@@ -32,10 +32,11 @@ for i in range(0, len(nomes_arquivos), num_colunas):
     for j in range(num_colunas):
         if i + j < len(nomes_arquivos):
            with cols[j]:
-                if st.button(nomes_arquivos[i + j]):
-                    selecionado = nomes_arquivos[i + j]
+               if st.button(nomes_formatados[i + j]):
+                   selecionado = nomes_arquivos[i + j]
 
 if selecionado:
     caminho_img = os.path.join("imagens", selecionado)
     st.markdown("---")
-    st.image(caminho_img, caption=nome_formatado, use_container_width=True)
+    st.image(caminho_img, caption=formatar_nome(selecionado), use_container_width=True)
+
