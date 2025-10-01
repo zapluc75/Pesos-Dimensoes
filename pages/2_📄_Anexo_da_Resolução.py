@@ -25,7 +25,7 @@ nomes_formatados = [formatar_nome(f) for f in nomes_arquivos]
 
 # --- Grid de imagens (miniaturas clicáveis) ---
 num_colunas = 6
-img_clicada = None
+selecionado = None #Variável para armazenar seleção
 
 for i in range(0, len(nomes_arquivos), num_colunas):
     cols = st.columns(num_colunas)
