@@ -47,9 +47,9 @@ if submitted:
     precisa = precisa_tacografo(placa, int(ano), int(cmt), int(pbt))
 
     if precisa:
-        st.success(f"Caminhão **{placa}** --> PRECISA DO TACÓGRAFO.")
+        st.success(f"Caminhão: **{placa}** ---> PRECISA DO TACÓGRAFO.")
     else:
-        st.info(f"Caminhão **{placa}** --> NÃO PRECISA DO TACÓGRAFO.")
+        st.info(f"Caminhão: **{placa}** ---> NÃO PRECISA DO TACÓGRAFO.")
 
 st.markdown("""
 ### 🚚 [Cronotacógrafo](https://cronotacografo.rbmlq.gov.br/certificados/consultar)
