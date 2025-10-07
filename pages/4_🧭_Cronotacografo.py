@@ -51,6 +51,10 @@ if submitted:
     else:
         st.info(f"Caminhão **{placa}** --> NÃO PRECISA DO TACÓGRAFO.")
 
+st.markdown("""
+### 🚚 [Cronotacógrafo](https://cronotacografo.rbmlq.gov.br/certificados/consultar)
+""")
+
 st.markdown("---")
 
 col_l, col_c, col_r = st.columns([1, 1, 1])  # Botão centralizado usando colunas
