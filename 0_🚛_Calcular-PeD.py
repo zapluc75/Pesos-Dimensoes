@@ -140,8 +140,7 @@ if st.session_state.calculado:
         PBTC apurado: {r["PBT-PBTC"]:.0f} kg  
         Limite regulamentar: {r["LimiteLegal"]:.0f} kg  
         Excesso apurado: {r["Excesso"]:.0f} kg  
-        Transportador: (transportador)  |  Expedidor: (expedidor) |  Embarcador: (embarcador)
-        CNPJ: (cnpj)  
+        Transportador: (transportador)  |  CNPJ/CPF: (cnpj/cpf)  
 
         Autuação realizada conforme Resolução 882/21 do CONTRAN  
         Transbordo não realizado devido indisponibilidade de meios operacionais para tal fim.
