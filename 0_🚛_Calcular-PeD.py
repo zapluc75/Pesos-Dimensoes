@@ -134,7 +134,7 @@ if st.session_state.calculado:
         Classificação por eixos:  {tipo}  
         De acordo com a Portaria 268/2022 do Senatran  
         Veículo/Combinação: {r["Placas"]}  
-        Configuração de veículos: {linha["Tam"]:.1f} metros  
+        Comprimento Total: ( ) metros  
         Tara: {r["TaraTotal"]:.0f} kg - (conforme plaquetas)  
         Carga: {r["PesoLiqNF"]:.0f} kg - (produto)  NF nº xxxxxxx  
         PBTC apurado: {r["PBT-PBTC"]:.0f} kg  
