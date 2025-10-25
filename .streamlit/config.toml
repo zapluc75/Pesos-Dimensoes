@@ -1,7 +1,8 @@
 [theme]
 primaryColor = "#fbff00ff"       # verde cor dos botões
-backgroundColor = "#383737ff"    # branco fundo da página
-secondaryBackgroundColor = "#b9b9b9ff"
+backgroundColor = "#000000ff"    # branco fundo da página
+secondaryBackgroundColor = "#383737ff"
 
 textColor = "#ffffffff"
+
 
