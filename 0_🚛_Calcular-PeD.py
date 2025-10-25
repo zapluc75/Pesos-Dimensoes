@@ -99,8 +99,7 @@ if st.session_state.validado:
                 "Excesso": float(excesso),
                 "Usuario": st.session_state.get("usuario_logado", "desconhecido"),
             }
-            salvar_csv(dados_exportar)
-
+            
             st.session_state.calculado = True
             st.session_state.resultado = dados_exportar
             st.session_state["dados_tipo"] = {
