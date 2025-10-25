@@ -43,16 +43,6 @@ def calcular_excesso(linha, taras, peso_liqnf, comprimento):
     excesso = max(0, pbt - limite)
     return pbt, limite, excesso
 
-def salvar_csv(dados, nome_arquivo="data/resultados.csv"):
-    try:
-        df = pd.DataFrame([dados])
-        if os.path.exists(nome_arquivo):
-            df.to_csv(nome_arquivo, mode='a', header=False, index=False)
-        else:
-            df.to_csv(nome_arquivo, index=False)
-    except Exception as e:
-        st.error(f"Erro ao salvar arquivo: {e}")
-
 def limpar_estado():
     for key in list(st.session_state.keys()):
         if key != "login_realizado":
