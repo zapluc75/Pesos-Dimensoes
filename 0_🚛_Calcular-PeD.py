@@ -8,7 +8,6 @@ from utils import (
     carregar_tabela,
     validar_placa,
     calcular_excesso,
-    salvar_csv,
     limpar_estado,
     verificar_login,
     gerar_tabela_formatada,
