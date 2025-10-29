@@ -17,7 +17,7 @@ st.markdown("---")
 pdf_files = [
     "data/Equip_Obrig_Desac.pdf",
     "data/68231Art231IV.pdf",
-    "data/68311Art231V.pdf",
+    "data/Exces_Pes_PBTC.pdf",
 ]
 
 cols = st.columns(3) #Cria layout em 3 colunas
@@ -37,7 +37,7 @@ for i, pdf_path in enumerate(pdf_files): # Loop para exibir os links nas colunas
             <a href="data:application/pdf;base64,{base64_pdf}" 
                target="_blank" 
                style="text-decoration:none; font-size:16px;">
-               📄 Abrir {nome}
+               📄 {nome}
             </a>
             """
             st.markdown(link_html, unsafe_allow_html=True)
