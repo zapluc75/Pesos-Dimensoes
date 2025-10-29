@@ -127,7 +127,9 @@ if st.session_state.calculado:
     if r["Excesso"] > 0:
         st.error(f"""
         🚨 **Excesso de Peso:** {r['Excesso']:.2f} Kg
+        
         **Infração:** Art. 231, V do CTB
+        
         **Código de Enquadramento:** 68311 - Transitar com o veículo com excesso de peso PBT/PBTC.
         """
         )
