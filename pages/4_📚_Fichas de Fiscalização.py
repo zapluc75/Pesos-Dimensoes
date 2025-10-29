@@ -9,10 +9,16 @@ if "login_realizado" not in st.session_state: # Gate de login (mantido do projet
     verificar_login()
     st.session_state["login_realizado"] = True
 
-
 st.info("⬅️ Utilize o menu lateral para navegar entre as funcionalidades.")
 st.title("📚 Fichas do Manual de Fiscalização")
 st.markdown("---")
+
+# Lista de arquivos PDF (pode adicionar quantos quiser)
+pdf_files = [
+    "data/66450Art230X.pdf",
+    "data/68231Art231IV.pdf",
+    "data/68311Art231V.pdf",
+]
 
 col1, col2, col3 = st.columns(3)
 with col1:
