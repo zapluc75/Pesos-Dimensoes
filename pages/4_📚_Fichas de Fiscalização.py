@@ -1,6 +1,17 @@
 import streamlit as st
 import base64
 from pathlib import Path
+from utils import verificar_login
+
+st.set_page_config(page_title="📦 Fichas do Manual de Fiscalização", page_icon="📦", layout="centered")
+
+if "login_realizado" not in st.session_state: # Gate de login (mantido do projeto original)
+    verificar_login()
+    st.session_state["login_realizado"] = True
+
+
+st.info("⬅️ Utilize o menu lateral para navegar entre as funcionalidades.")
+st.title("📦 Fichas do Manual de Fiscalização")
 
 # Caminho do PDF
 pdf_path = Path("data/ficha.pdf")
@@ -11,7 +22,7 @@ if pdf_path.exists():
         base64_pdf = base64.b64encode(f.read()).decode("utf-8")
 
     # Cria um link clicável chamado "Ficha"
-    pdf_link = f'<a href="data:application/pdf;base64,{base64_pdf}" target="_blank">📄 Abrir Ficha</a>'
+    pdf_link = f'<a href="data:application/pdf;base64,{base64_pdf}" target="_blank">📄 Excesso de Peso PBT/PTBC</a>'
     st.markdown(pdf_link, unsafe_allow_html=True)
 else:
     st.warning("⚠️ O arquivo 'data/ficha.pdf' não foi encontrado.")
