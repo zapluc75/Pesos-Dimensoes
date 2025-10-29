@@ -20,19 +20,26 @@ pdf_files = [
     "data/68311Art231V.pdf",
 ]
 
-col1, col2, col3 = st.columns(3)
-with col1:
-with col2:
-    pdf_path = Path("data/68311Art231V.pdf") # Caminho do PDF
-    if pdf_path.exists():# Verifica se o arquivo existe
-        with open(pdf_path, "rb") as f:
-            base64_pdf = base64.b64encode(f.read()).decode("utf-8")
+cols = st.columns(3) #Cria layout em 3 colunas
 
-        # Cria um link clicável chamado "Ficha"
-        pdf_link = f'<a href="data:application/pdf;base64,{base64_pdf}" target="_blank">📄 Excesso de Peso PBT/PTBC</a>'
-        st.markdown(pdf_link, unsafe_allow_html=True)
-    else:
-        st.warning("⚠️ O arquivo 'data/ficha.pdf' não foi encontrado.")
-with col3:
+for i, pdf_path in enumerate(pdf_files): # Loop para exibir os links nas colunas
+    path = Path(pdf_path)
 
+    with cols[i % 3]:  # distribui nas 3 colunas
+        if path.exists():
+            with open(path, "rb") as f:
+                base64_pdf = base64.b64encode(f.read()).decode("utf-8")
+            
+            nome = path.stem.capitalize() # Nome do arquivo sem caminho
 
+            # Cria o link para abrir o PDF
+            link_html = f"""
+            <a href="data:application/pdf;base64,{base64_pdf}" 
+               target="_blank" 
+               style="text-decoration:none; font-size:16px;">
+               📄 Abrir {nome}
+            </a>
+            """
+            st.markdown(link_html, unsafe_allow_html=True)
+        else:
+            st.warning(f"⚠️ Arquivo não encontrado: {path.name}")
