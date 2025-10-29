@@ -12,17 +12,22 @@ if "login_realizado" not in st.session_state: # Gate de login (mantido do projet
 
 st.info("⬅️ Utilize o menu lateral para navegar entre as funcionalidades.")
 st.title("📚 Fichas do Manual de Fiscalização")
+st.markdown("---")
 
-# Caminho do PDF
-pdf_path = Path("data/68311Art231V.pdf")
+col1, col2, col3 = st.columns(3)
+with col2:
+   
+    pdf_path = Path("data/68311Art231V.pdf") # Caminho do PDF
 
-# Verifica se o arquivo existe
-if pdf_path.exists():
-    with open(pdf_path, "rb") as f:
-        base64_pdf = base64.b64encode(f.read()).decode("utf-8")
+    # Verifica se o arquivo existe
+    if pdf_path.exists():
+        with open(pdf_path, "rb") as f:
+            base64_pdf = base64.b64encode(f.read()).decode("utf-8")
 
-    # Cria um link clicável chamado "Ficha"
-    pdf_link = f'<a href="data:application/pdf;base64,{base64_pdf}" target="_blank">📄 Excesso de Peso PBT/PTBC</a>'
-    st.markdown(pdf_link, unsafe_allow_html=True)
-else:
-    st.warning("⚠️ O arquivo 'data/ficha.pdf' não foi encontrado.")
+        # Cria um link clicável chamado "Ficha"
+        pdf_link = f'<a href="data:application/pdf;base64,{base64_pdf}" target="_blank">📄 Excesso de Peso PBT/PTBC</a>'
+        st.markdown(pdf_link, unsafe_allow_html=True)
+    else:
+        st.warning("⚠️ O arquivo 'data/ficha.pdf' não foi encontrado.")
+
+
