@@ -3,7 +3,7 @@ import base64
 from pathlib import Path
 from utils import verificar_login
 
-st.set_page_config(page_title="📚 Fichas do Manual de Fiscalização", page_icon=", layout="centered")
+st.set_page_config(page_title="Fichas do Manual de Fiscalização", page_icon="📚", layout="centered")
 
 if "login_realizado" not in st.session_state: # Gate de login (mantido do projeto original)
     verificar_login()
