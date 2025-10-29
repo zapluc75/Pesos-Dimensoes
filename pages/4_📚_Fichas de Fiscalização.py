@@ -16,7 +16,7 @@ st.markdown("---")
 # Lista de arquivos PDF (pode adicionar quantos quiser)
 pdf_files = [
     "data/Equip_Obrig_Desac.pdf",
-    "data/68231Art231IV.pdf",
+    "data/Dimen_Sem_Aut.pdf",
     "data/Exces_Pes_PBTC.pdf",
 ]
 
