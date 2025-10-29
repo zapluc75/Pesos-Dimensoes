@@ -15,12 +15,10 @@ st.title("📚 Fichas do Manual de Fiscalização")
 st.markdown("---")
 
 col1, col2, col3 = st.columns(3)
+with col1:
 with col2:
-   
     pdf_path = Path("data/68311Art231V.pdf") # Caminho do PDF
-
-    # Verifica se o arquivo existe
-    if pdf_path.exists():
+    if pdf_path.exists():# Verifica se o arquivo existe
         with open(pdf_path, "rb") as f:
             base64_pdf = base64.b64encode(f.read()).decode("utf-8")
 
@@ -29,5 +27,6 @@ with col2:
         st.markdown(pdf_link, unsafe_allow_html=True)
     else:
         st.warning("⚠️ O arquivo 'data/ficha.pdf' não foi encontrado.")
+with col3:
 
 
