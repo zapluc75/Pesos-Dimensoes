@@ -125,10 +125,10 @@ if st.session_state.calculado:
     st.markdown(gerar_tabela_formatada(r), unsafe_allow_html=True)
    
     if r["Excesso"] > 0:
-        st.error(f"
-        🚨 **Excesso de Peso:** {r['Excesso']:.2f} Kg\n"        
-        "**Infração:** Art. 231, V do CTB\n"        
-        "**Código de Enquadramento:** 68311 - Transitar com o veículo com excesso de peso PBT/PBTC."
+        st.error(
+            f"🚨 **Excesso de Peso:** {r['Excesso']:.2f} Kg\n"
+            "**Infração:** Art. 231, V do CTB\n"
+            "**Código de Enquadramento:** 68311 - Transitar com o veículo com excesso de peso PBT/PBTC."
         )
         
         texto = textwrap.dedent(f"""\
