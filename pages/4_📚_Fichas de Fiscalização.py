@@ -14,7 +14,7 @@ st.info("⬅️ Utilize o menu lateral para navegar entre as funcionalidades.")
 st.title("📚 Fichas do Manual de Fiscalização")
 
 # Caminho do PDF
-pdf_path = Path("data/ficha.pdf")
+pdf_path = Path("data/68311Art231V.pdf")
 
 # Verifica se o arquivo existe
 if pdf_path.exists():
