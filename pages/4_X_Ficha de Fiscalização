@@ -3,7 +3,7 @@ import base64
 from pathlib import Path
 
 # Caminho do PDF
-pdf_path = Path("data/ficha.pdf")
+pdf_path = Path("data/Ficha.pdf")
 
 # Verifica se o arquivo existe
 if pdf_path.exists():
@@ -14,4 +14,4 @@ if pdf_path.exists():
     pdf_link = f'<a href="data:application/pdf;base64,{base64_pdf}" target="_blank">📄 Abrir Ficha</a>'
     st.markdown(pdf_link, unsafe_allow_html=True)
 else:
-    st.warning("⚠️ O arquivo 'data/ficha.pdf' não foi encontrado.")
+    st.warning("⚠️ O arquivo 'data/Ficha.pdf' não foi encontrado.")
