@@ -156,6 +156,8 @@ if st.session_state.calculado:
             
     else:
         st.success("✅ Peso dentro do limite.")
+        st.markdown(r["Placas"])
+        copy_button(r["Placas"], tooltip="Copias", copied_label=""✅ Copiado!") # 2) Botão para copiar
 
     if (comprimento - linha["Tamax"]) > 0 or linha["AET"] == "Sim":
         st.error(f"🚨 Combinação {tipo} de {comprimento}m *** Necessita AET *** Tamanho Máximo Permitido {linha['Tamax']:.1f}m.")
