@@ -11,6 +11,7 @@ from utils import (
     limpar_estado,
     verificar_login,
     gerar_tabela_formatada,
+    to_upper
 )
 
 st.set_page_config(page_title="Apuração Pesos e Dimensões - DERDF", page_icon="📦", layout="centered")
@@ -54,7 +55,8 @@ st.subheader("🚛 Informações de cada unidade (Placa + Tara)")
 for i in range(qt_tara):
     c1, c2 = st.columns(2)
     with c1:
-        placa = st.text_input(f"Placa {i+1}", key=f"placa_{i}").strip().upper()
+        placa = st.text_input(f"Placa {i+1}", key=f"placa_{i}",on_change = to_upper).strip().upper()
+        st.write(st.session_state.texto)
     with c2:
         tara = st.number_input(f"Tara {i+1} (Kg)", min_value=0.0, key=f"tara_{i}")
     placas.append(placa)
