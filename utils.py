@@ -74,5 +74,6 @@ def gerar_tabela_formatada(dados):
     return html
 
 def to_upper(key):
-    st.session_state[key] = st.session_state[key].upper()
+    st.session_state[key] = st.session_state[key].strip().upper()
+    
     
