@@ -55,8 +55,10 @@ st.subheader("🚛 Informações de cada unidade (Placa + Tara)")
 for i in range(qt_tara):
     c1, c2 = st.columns(2)
     with c1:
-        placa = st.text_input(f"Placa {i+1}", key=f"placa_{i}",on_change = to_upper).strip().upper()
-        st.write(st.session_state.texto)
+        key = f"placa_{i}"
+        st.text_input(f"Placa {i+1}",key=key,on_change=to_upper,args=(key,))
+        placa = st.session_state.get(key, "")
+        st.write("Digitado:", placa)
     with c2:
         tara = st.number_input(f"Tara {i+1} (Kg)", min_value=0.0, key=f"tara_{i}")
     placas.append(placa)
