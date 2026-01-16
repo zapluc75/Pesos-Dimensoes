@@ -18,6 +18,16 @@ st.markdown("---")
 # Lista de arquivos PDF (pode adicionar quantos quiser)
 pdf_files = [
     "imagens/C0_Cam.pdf",
+    "imagens/CR0_Cam_Rbq.pdf",
+    "imagens/CR0+_Cam_Rbq+.pdf",
+    "imagens/CRR+_Cam_2-Rbq+.pdf",
+    "imagens/CTS0_CamTrtr_SemiRbq.pdf",
+    "imagens/CTSR+_CamTrtr_SemiRbq_Rbq+.pdf",
+    "imagens/CTSR0_CamTrtr_SemiRbq_Rbq.pdf",
+    "imagens/CTSRr+_CamTrtr_SemiRbq_Rbp_Rala+.pdf",
+    "imagens/CTSS+_CamTrtr_2-SemiRbq.pdf",
+    "imagens/CTSS0_CamTrtr_2-SemiRbq.pdf",
+    "imagens/CTSSS+_CamTrtr_3-SemiRbq+.pdf",
 ]
 
 # --- Cria layout em 3 colunas ---
