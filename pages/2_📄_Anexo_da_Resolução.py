@@ -1,57 +1,52 @@
 import streamlit as st
-import base64
-from pathlib import Path
+import os
+import glob
 from utils import verificar_login
-
-st.set_page_config(page_title="Anexo da Resolução", page_icon="📄", layout="centered")
 
 # --- Controle de login ---
 if "login_realizado" not in st.session_state:
     verificar_login()
     st.session_state["login_realizado"] = True
+    
+# --- Funções auxiliares ---
+def dividir_nome(nome):
+    """Separa em prefixo (antes do 1º espaço) e sufixo (restante)."""
+    base = os.path.splitext(nome)[0].replace("_", " ")
+    partes = base.split(" ", 1)  # divide só no primeiro espaço
+    prefixo = partes[0]
+    sufixo = partes[1] if len(partes) > 1 else ""
+    return prefixo, sufixo
 
 # --- Cabeçalho ---
 st.title("📄 Anexo da Resolução - Tipos de Caminhão")
 st.info("⬅️ Use o menu lateral para navegar entre as funcionalidades.")
 st.markdown("---")
-    
-# Lista de arquivos PDF (pode adicionar quantos quiser)
-pdf_files = [
-    "imagens/C0_Cam.pdf",
-    "imagens/CR0_Cam_Rbq.pdf",
-    "imagens/CR0+_Cam_Rbq+.pdf",
-    "imagens/CRR+_Cam_2-Rbq+.pdf",
-    "imagens/CTS0_CamTrtr_SemiRbq.pdf",
-    "imagens/CTSR+_CamTrtr_SemiRbq_Rbq+.pdf",
-    "imagens/CTSR0_CamTrtr_SemiRbq_Rbq.pdf",
-    "imagens/CTSRr+_CamTrtr_SemiRbq_Rbp_Rala+.pdf",
-    "imagens/CTSS+_CamTrtr_2-SemiRbq.pdf",
-    "imagens/CTSS0_CamTrtr_2-SemiRbq.pdf",
-    "imagens/CTSSS+_CamTrtr_3-SemiRbq+.pdf",
-]
 
-# --- Cria layout em 3 colunas ---
-cols = st.columns(3)
+# --- Lista de imagens ---
+lista_jpgs = sorted(glob.glob(os.path.join("imagens", "*.jpg")))
+nomes_arquivos = [os.path.basename(f) for f in lista_jpgs]
 
-for i, pdf_path in enumerate(pdf_files): # Loop para exibir os links nas colunas
-    path = Path(pdf_path)
+# --- Grid de imagens (miniaturas clicáveis) ---
+num_colunas = 6
+selecionado = None #Variável para armazenar seleção
 
-    with cols[i % 3]:  # distribui nas 3 colunas
-        if path.exists():
-            with open(path, "rb") as f:
-                base64_pdf = base64.b64encode(f.read()).decode("utf-8")
-            
-            nome = path.stem.capitalize() # Nome do arquivo sem caminho
+for i in range(0, len(nomes_arquivos), num_colunas):
+    cols = st.columns(num_colunas)
+    for j in range(num_colunas):
+        if i + j < len(nomes_arquivos):
+            nome_original = nomes_arquivos[i + j]
+            prefixo, sufixo = dividir_nome(nome_original)
+            with cols[j]:
+                if st.button(prefixo, key=nome_original):
+                    selecionado = nome_original
+                if sufixo:  # só mostra legenda se existir
+                    st.caption(sufixo)
 
-            # Cria o link para abrir o PDF
-            link_html = f"""
-            <a href="data:application/pdf;base64,{base64_pdf}" 
-               target="_blank" 
-               style="text-decoration:none; font-size:16px;">
-               📄 {nome}
-            </a>
-            """
-            st.markdown(link_html, unsafe_allow_html=True)
-        else:
-            st.warning(f"⚠️ Arquivo não encontrado: {path.name}")
+st.success("🚚 Clique em um botão acima para visualizar em destaque abaixo! 👇")
+if selecionado:
+    caminho_img = os.path.join("imagens", selecionado)
+    st.markdown("---")
+    st.image(caminho_img, caption=selecionado, use_container_width=True)
+
+
 
