@@ -57,7 +57,7 @@ def _set_dataframe(df: pd.DataFrame) -> None:
 
 # --------- Cabeçalho ---------
 st.info("⬅️ Utilize o menu lateral para navegar entre as funcionalidades.")
-st.title("⚖️ Somador de Peso Líquido de Notas Fiscais")
+st.title("⚖️ Calculadora de Peso Líquido de Notas Fiscais")
 st.caption(
     "Adicione entradas de peso (+) ou subtrações (-). O contador de NFs segue o seu script original: **somente** entradas com operação `+` contam como NF."
 )
@@ -163,6 +163,7 @@ else:
 
 # --------- Rodapé ---------
 st.caption("Dica: verifique os dados antes de finalizar o registro.")
+
 
 
 
