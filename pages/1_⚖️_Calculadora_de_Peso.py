@@ -10,7 +10,7 @@ if "login_realizado" not in st.session_state:
 
 # --------- Configuração da página ---------
 st.set_page_config(
-    page_title="Somador de Peso Líquido",
+    page_title="Calculadora de Peso Líquido",
     page_icon="⚖️",
     layout="centered",
 )
@@ -163,6 +163,7 @@ else:
 
 # --------- Rodapé ---------
 st.caption("Dica: verifique os dados antes de finalizar o registro.")
+
 
 
 
