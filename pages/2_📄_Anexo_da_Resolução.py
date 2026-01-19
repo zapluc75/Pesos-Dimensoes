@@ -20,7 +20,6 @@ def dividir_nome(nome):
 # --- Cabeçalho ---
 st.title("📄 Anexo da Resolução - Tipos de Caminhão")
 st.info("⬅️ Use o menu lateral para navegar entre as funcionalidades.")
-st.markdown("---")
 
 # --- Lista de imagens ---
 lista_jpgs = sorted(glob.glob(os.path.join("imagens", "*.jpg")))
