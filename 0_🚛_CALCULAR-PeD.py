@@ -15,7 +15,7 @@ from utils import (
 )
 
 st.set_page_config(page_title="Apuração Pesos e Dimensões - DERDF", page_icon="📦", layout="centered")
-st.write(st.secrets)
+st.write(st.secrets.keys())
 
 if "login_realizado" not in st.session_state: # Gate de login (mantido do projeto original)
     verificar_login()
