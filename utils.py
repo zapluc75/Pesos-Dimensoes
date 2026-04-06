@@ -46,7 +46,7 @@ def autenticar(usuario, senha): #validar o login
     usuarios = st.secrets["usuarios"]
     senha_hash = hashlib.sha256(senha.encode()).hexdigest()
            
-    return usuario in usuarios and usuarios[usuario] == senha_hash:
+    return usuario in usuarios and usuarios[usuario] == senha_hash
 
 @st.cache_data
 def carregar_tabela(nome_arquivo):
@@ -62,10 +62,8 @@ def calcular_excesso(linha, taras, peso_liqnf, comprimento):
     excesso = max(0, pbt - limite)
     return pbt, limite, excesso
 
-def limpar_estado():
-    for key in list(st.session_state.keys()):
-        if key != "login_realizado":
-            del st.session_state[key]
+def limpar_estado():    
+    if key not in ["login_realizado", "autenticado", "usuario_logado"]:
 
 def gerar_tabela_formatada(dados):
     html = """
