@@ -4,7 +4,7 @@ import pandas as pd
 import streamlit as st
 import hashlib
 
-def verificar_login():
+def verificar_login(): #registra no sistema
     if st.session_state.get("autenticado"):
         return True
 
@@ -21,7 +21,7 @@ def verificar_login():
             st.error("Usuário ou senha inválidos")
     st.stop()
 
-def autenticar(usuario, senha):
+def autenticar(usuario, senha): #validar o login
     usuarios = st.secrets["usuarios"]
     senha_hash = hashlib.sha256(senha.encode()).hexdigest()
            
