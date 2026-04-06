@@ -5,11 +5,12 @@ from st_copy import copy_button
 import textwrap
 
 from utils import (
+    verificar_login,
+    autenticar,
     carregar_tabela,
     validar_placa,
     calcular_excesso,
     limpar_estado,
-    verificar_login,
     gerar_tabela_formatada,
     to_upper
 )
