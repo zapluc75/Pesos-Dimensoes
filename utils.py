@@ -39,6 +39,7 @@ def verificar_login(): #registra no sistema
             else:
                 restante = 5 - st.session_state.tentativas
                 st.error(f"❌ Usuário ou senha inválidos. Tentativas restantes: {restante}")
+    
     st.stop()
 
 def autenticar(usuario, senha): #validar o login
