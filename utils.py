@@ -13,12 +13,20 @@ def verificar_login(): #registra no sistema
     usuario = st.text_input("Usuario")
     senha = st.text_input("Senha", type="password")
     if st.button("Entrar"):
-        if autenticar(usuario, senha):
+        if autenticar(usuario, senha): # Sucesso → reset
             st.session_state.autenticado = True
             st.session_state.usuario_logado = usuario
+            st.session_state.tentativas = 0
             st.rerun()
-        else:
-            st.error("Usuário ou senha inválidos")
+        else: # Falha → incrementa
+            st.session_state.tentativas += 1
+            if st.session_state.tentativas >= 5:
+                st.session_state.bloqueado_ate = agora + 60  # 60 segundos
+                st.session_state.tentativas = 0
+                st.error("🔒 Muitas tentativas. Bloqueado por 60s.")
+            else:
+                restante = 5 - st.session_state.tentativas
+                st.error(f"❌ Usuário ou senha inválidos. Tentativas restantes: {restante}")
     st.stop()
 
 def autenticar(usuario, senha): #validar o login
