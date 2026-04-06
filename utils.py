@@ -24,10 +24,8 @@ def verificar_login():
 def autenticar(usuario, senha):
     usuarios = st.secrets["usuarios"]
     senha_hash = hashlib.sha256(senha.encode()).hexdigest()
-    if usuario in usuarios and usuarios[usuario] == senha_hash:
-        st.session_state.usuario_logado = usuario  # <- Aqui armazena o login ativo
-        return True
-    return False
+           
+    return usuario in usuarios and usuarios[usuario] == senha_hash:
 
 @st.cache_data
 def carregar_tabela(nome_arquivo):
