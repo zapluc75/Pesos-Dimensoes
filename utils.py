@@ -3,9 +3,21 @@ import re
 import pandas as pd
 import streamlit as st
 import hashlib
+import time
 
 def verificar_login(): #registra no sistema
-    if st.session_state.get("autenticado"):
+    if "tentativas" not in st.session_state: # Inicializa controle
+        st.session_state.tentativas = 0
+    if "bloqueado_ate" not in st.session_state:
+        st.session_state.bloqueado_ate = 0
+
+    agora = time.time() # Verifica bloqueio
+    if agora < st.session_state.bloqueado_ate:
+        restante = int(st.session_state.bloqueado_ate - agora)
+        st.error(f"🔒 Muitas tentativas. Aguarde {restante}s.")
+        st.stop()
+        
+    if st.session_state.get("autenticado"): #se já autenticado
         return True
 
     st.title("🔐 Autenticação Necessária")
