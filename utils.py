@@ -3,9 +3,21 @@ import re
 import pandas as pd
 import streamlit as st
 import hashlib
+import time
 
-def verificar_login():
-    if st.session_state.get("autenticado"):
+def verificar_login(): #registra no sistema
+    if "tentativas" not in st.session_state: # Inicializa controle
+        st.session_state.tentativas = 0
+    if "bloqueado_ate" not in st.session_state:
+        st.session_state.bloqueado_ate = 0
+
+    agora = time.time() # Verifica bloqueio
+    if agora < st.session_state.bloqueado_ate:
+        restante = int(st.session_state.bloqueado_ate - agora)
+        st.error(f"🔒 Muitas tentativas. Aguarde {restante}s.")
+        st.stop()
+        
+    if st.session_state.get("autenticado"): #se já autenticado
         return True
 
     st.title("🔐 Autenticação Necessária")
@@ -13,21 +25,28 @@ def verificar_login():
     usuario = st.text_input("Usuario")
     senha = st.text_input("Senha", type="password")
     if st.button("Entrar"):
-        if autenticar(usuario, senha):
+        if autenticar(usuario, senha): # Sucesso → reset
             st.session_state.autenticado = True
             st.session_state.usuario_logado = usuario
+            st.session_state.tentativas = 0
             st.rerun()
-        else:
-            st.error("Usuário ou senha inválidos")
+        else: # Falha → incrementa
+            st.session_state.tentativas += 1
+            if st.session_state.tentativas >= 5:
+                st.session_state.bloqueado_ate = agora + 60  # 60 segundos
+                st.session_state.tentativas = 0
+                st.error("🔒 Muitas tentativas. Bloqueado por 60s.")
+            else:
+                restante = 5 - st.session_state.tentativas
+                st.error(f"❌ Usuário ou senha inválidos. Tentativas restantes: {restante}")
+    
     st.stop()
 
-def autenticar(usuario, senha):
+def autenticar(usuario, senha): #validar o login
     usuarios = st.secrets["usuarios"]
     senha_hash = hashlib.sha256(senha.encode()).hexdigest()
-    if usuario in usuarios and usuarios[usuario] == senha_hash:
-        st.session_state.usuario_logado = usuario  # <- Aqui armazena o login ativo
-        return True
-    return False
+           
+    return usuario in usuarios and usuarios[usuario] == senha_hash
 
 @st.cache_data
 def carregar_tabela(nome_arquivo):
@@ -43,10 +62,8 @@ def calcular_excesso(linha, taras, peso_liqnf, comprimento):
     excesso = max(0, pbt - limite)
     return pbt, limite, excesso
 
-def limpar_estado():
-    for key in list(st.session_state.keys()):
-        if key != "login_realizado":
-            del st.session_state[key]
+def limpar_estado():    
+    if key not in ["login_realizado", "autenticado", "usuario_logado"]:
 
 def gerar_tabela_formatada(dados):
     html = """
