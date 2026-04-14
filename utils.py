@@ -5,6 +5,11 @@ import streamlit as st
 import hashlib
 import time
 
+def autenticar(usuario, senha): #validar o login
+    usuarios = st.secrets["usuarios"]
+    senha_hash = hashlib.sha256(senha.encode()).hexdigest()
+    return usuario in usuarios and usuarios[usuario] == senha_hash
+
 def verificar_login(): #registra no sistema
     if "tentativas" not in st.session_state: # Inicializa controle
         st.session_state.tentativas = 0
@@ -41,12 +46,6 @@ def verificar_login(): #registra no sistema
                 st.error(f"❌ Usuário ou senha inválidos. Tentativas restantes: {restante}")
     
     st.stop()
-
-def autenticar(usuario, senha): #validar o login
-    usuarios = st.secrets["usuarios"]
-    senha_hash = hashlib.sha256(senha.encode()).hexdigest()
-           
-    return usuario in usuarios and usuarios[usuario] == senha_hash
 
 @st.cache_data
 def carregar_tabela(nome_arquivo):
