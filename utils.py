@@ -61,8 +61,10 @@ def calcular_excesso(linha, taras, peso_liqnf, comprimento):
     excesso = max(0, pbt - limite)
     return pbt, limite, excesso
 
-def limpar_estado():    
-    if key not in ["login_realizado", "autenticado", "usuario_logado"]:
+def limpar_estado():
+    for key in list(st.session_state.keys()):
+        if key != "login_realizado":
+            del st.session_state[key]
 
 def gerar_tabela_formatada(dados):
     html = """
