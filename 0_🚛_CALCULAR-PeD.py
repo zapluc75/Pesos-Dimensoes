@@ -15,7 +15,7 @@ from utils import (
     to_upper
 )
 
-st.set_page_config(page_title="Apuração Pesos e Dimensões - DERDF", page_icon="📦", layout="centered")
+st.set_page_config(page_title="Apuração Pesos e Dimensões", page_icon="📦", layout="centered")
 
 if "login_realizado" not in st.session_state: # Gate de login (mantido do projeto original)
     verificar_login()
