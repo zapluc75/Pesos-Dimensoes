@@ -18,7 +18,7 @@ def dividir_nome(nome):
     return prefixo, sufixo
 
 # --- Cabeçalho ---
-st.title("📄 Anexo da Resolução - Tipos de Caminhão")
+st.title("📄 Tipos de Caminhão")
 st.info("⬅️ Use o menu lateral para navegar entre as funcionalidades.")
 
 # --- Lista de imagens ---
