@@ -8,35 +8,35 @@ C6,22000,1,14,22000,14,Nao,Veiculo Comum,Caminhao Simples,03 Eixos,⟦⬤⬤═�
 C7,29000,1,14,29000,14,Nao,Veiculo Comum,Caminhao Simples,04 Eixos,⟦⬤⬤══⊚⊚⟧
 C8,25500,1,14,25500,14,Nao,Veiculo Comum,Caminhao Simples,04 Eixos,⟦⬤⬤══⊚⬤⟧
 C9,25500,1,14,25500,14,Nao,Veiculo Comum,Caminhao Simples,04 Eixos,⟦⬤⬤══⬤⊚⟧
-CTS1,26000,2,16,26000,19.30,Nao,Veiculo Comum,Caminhao Trator + Semirreboque,00 Eixos,xxx
-CTS2,33000,2,16,33000,19.30,Nao,Veiculo Comum,Caminhao Trator + Semirreboque,00 Eixos,xxx
-CTS3,36000,2,16,36000,19.30,Nao,Veiculo Comum,Caminhao Trator + Semirreboque,00 Eixos,xxx
-CTS4,41500,2,16,41500,19.30,Nao,Veiculo Comum,Caminhao Trator + Semirreboque,00 Eixos,xxx
-CTS5,43000,2,16,43000,19.30,Nao,Veiculo Comum,Caminhao Trator + Semirreboque,00 Eixos,xxx
-CTS6,45000,2,16,45000,19.30,Nao,Veiculo Comum,Caminhao Trator + Semirreboque,00 Eixos,xxx
-CTS7,33000,2,16,33000,19.30,Nao,Veiculo Comum,Caminhao Trator + Semirreboque,00 Eixos,xxx
-CTS8,43000,2,16,43000,19.30,Nao,Veiculo Comum,Caminhao Trator + Semirreboque,00 Eixos,xxx
-CTS9,39500,2,16,39500,19.30,Nao,Veiculo Comum,Caminhao Trator + Semirreboque,00 Eixos,xxx
-CTS10,45000,2,16,48500,19.30,Nao,Veiculo Comum,Caminhao Trator + Semirreboque,00 Eixos,xxx
-CTS11,48500,2,17.5,58500,19.30,Nao,Veiculo Comum,Caminhao Trator + Semirreboque,00 Eixos,xxx
-CTS12,45000,2,16,45000,19.30,Nao,Veiculo Comum,Caminhao Trator + Semirreboque,00 Eixos,xxx
-CTS13,45000,2,16,50000,19.30,Nao,Veiculo Comum,Caminhao Trator + Semirreboque,00 Eixos,xxx
-CTS14,45000,2,16,46500,19.30,Nao,Veiculo Comum,Caminhao Trator + Semirreboque,00 Eixos,xxx
-CTS15,45000,2,16,53000,19.30,Nao,Veiculo Comum,Caminhao Trator + Semirreboque,00 Eixos,xxx
-CTS16,45000,2,16,49500,19.30,Nao,Veiculo Comum,Caminhao Trator + Semirreboque,00 Eixos,xxx
-CTS17,29500,2,16,29500,19.30,Nao,Veiculo Comum,Caminhao Trator + Semirreboque,00 Eixos,xxx
-CTS18,36500,2,16,36500,19.30,Nao,Veiculo Comum,Caminhao Trator + Semirreboque,00 Eixos,xxx
-CTS19,40000,2,16,40000,19.30,Nao,Veiculo Comum,Caminhao Trator + Semirreboque,00 Eixos,xxx
-CTS20,45000,2,16,52500,19.30,Nao,Veiculo Comum,Caminhao Trator + Semirreboque,00 Eixos,xxx
-CTS21,45000,2,16,47500,19.30,Nao,Veiculo Comum,Caminhao Trator + Semirreboque,00 Eixos,xxx
-CTS22,45000,2,16,54500,19.30,Nao,Veiculo Comum,Caminhao Trator + Semirreboque,00 Eixos,xxx
-CTS23,45000,2,16,51000,19.30,Nao,Veiculo Comum,Caminhao Trator + Semirreboque,00 Eixos,xxx
-CTS24,39000,2,16,39000,19.30,Nao,Veiculo Comum,Caminhao Trator + Semirreboque,00 Eixos,xxx
-CTS25,35500,2,16,35500,19.30,Nao,Veiculo Comum,Caminhao Trator + Semirreboque,00 Eixos,xxx
-CTS26,45000,2,16,46000,19.30,Nao,Veiculo Comum,Caminhao Trator + Semirreboque,00 Eixos,xxx
-CTS27,42500,2,16,42500,19.30,Nao,Veiculo Comum,Caminhao Trator + Semirreboque,00 Eixos,xxx
-CTS28,45000,2,16,49000,19.30,Nao,Veiculo Comum,Caminhao Trator + Semirreboque,00 Eixos,xxx
-CTS29,45000,2,16,45500,19.30,Nao,Veiculo Comum,Caminhao Trator + Semirreboque,00 Eixos,xxx
+CTS1,26000,2,16,26000,19.30,Nao,Veiculo Comum,Caminhao Trator + Semirreboque,03 Eixos,xxx
+CTS2,33000,2,16,33000,19.30,Nao,Veiculo Comum,Caminhao Trator + Semirreboque,04 Eixos,xxx
+CTS3,36000,2,16,36000,19.30,Nao,Veiculo Comum,Caminhao Trator + Semirreboque,04 Eixos,xxx
+CTS4,41500,2,16,41500,19.30,Nao,Veiculo Comum,Caminhao Trator + Semirreboque,05 Eixos,xxx
+CTS5,43000,2,16,43000,19.30,Nao,Veiculo Comum,Caminhao Trator + Semirreboque,05 Eixos,xxx
+CTS6,45000,2,16,45000,19.30,Nao,Veiculo Comum,Caminhao Trator + Semirreboque,05 Eixos,xxx
+CTS7,33000,2,16,33000,19.30,Nao,Veiculo Comum,Caminhao Trator + Semirreboque,04 Eixos,xxx
+CTS8,43000,2,16,43000,19.30,Nao,Veiculo Comum,Caminhao Trator + Semirreboque,05 Eixos,xxx
+CTS9,39500,2,16,39500,19.30,Nao,Veiculo Comum,Caminhao Trator + Semirreboque,05 Eixos,xxx
+CTS10,45000,2,16,48500,19.30,Nao,Veiculo Comum,Caminhao Trator + Semirreboque,06 Eixos,xxx
+CTS11,48500,2,17.5,58500,19.30,Nao,Veiculo Comum,Caminhao Trator + Semirreboque,07 Eixos,xxx
+CTS12,45000,2,16,45000,19.30,Nao,Veiculo Comum,Caminhao Trator + Semirreboque,06 Eixos,xxx
+CTS13,45000,2,16,50000,19.30,Nao,Veiculo Comum,Caminhao Trator + Semirreboque,06 Eixos,xxx
+CTS14,45000,2,16,46500,19.30,Nao,Veiculo Comum,Caminhao Trator + Semirreboque,06 Eixos,xxx
+CTS15,45000,2,16,53000,19.30,Nao,Veiculo Comum,Caminhao Trator + Semirreboque,06 Eixos,xxx
+CTS16,45000,2,16,49500,19.30,Nao,Veiculo Comum,Caminhao Trator + Semirreboque,06 Eixos,xxx
+CTS17,29500,2,16,29500,19.30,Nao,Veiculo Comum,Caminhao Trator + Semirreboque,04 Eixos,xxx
+CTS18,36500,2,16,36500,19.30,Nao,Veiculo Comum,Caminhao Trator + Semirreboque,05 Eixos,xxx
+CTS19,40000,2,16,40000,19.30,Nao,Veiculo Comum,Caminhao Trator + Semirreboque,05 Eixos,xxx
+CTS20,45000,2,16,52500,19.30,Nao,Veiculo Comum,Caminhao Trator + Semirreboque,07 Eixos,xxx
+CTS21,45000,2,16,47500,19.30,Nao,Veiculo Comum,Caminhao Trator + Semirreboque,06 Eixos,xxx
+CTS22,45000,2,16,54500,19.30,Nao,Veiculo Comum,Caminhao Trator + Semirreboque,07 Eixos,xxx
+CTS23,45000,2,16,51000,19.30,Nao,Veiculo Comum,Caminhao Trator + Semirreboque,07 Eixos,xxx
+CTS24,39000,2,16,39000,19.30,Nao,Veiculo Comum,Caminhao Trator + Semirreboque,05 Eixos,xxx
+CTS25,35500,2,16,35500,19.30,Nao,Veiculo Comum,Caminhao Trator + Semirreboque,05 Eixos,xxx
+CTS26,45000,2,16,46000,19.30,Nao,Veiculo Comum,Caminhao Trator + Semirreboque,06 Eixos,xxx
+CTS27,42500,2,16,42500,19.30,Nao,Veiculo Comum,Caminhao Trator + Semirreboque,06 Eixos,xxx
+CTS28,45000,2,16,49000,19.30,Nao,Veiculo Comum,Caminhao Trator + Semirreboque,06 Eixos,xxx
+CTS29,45000,2,16,45500,19.30,Nao,Veiculo Comum,Caminhao Trator + Semirreboque,06 Eixos,xxx
 CR1,36000,2,17.5,36000,19.80,Nao,Veiculo Comum,Caminhao + Reboque,00 Eixos,xxx
 CR2,43000,2,17.5,43000,19.80,Nao,Veiculo Comum,Caminhao + Reboque,00 Eixos,xxx
 CR3,45000,2,17.5,50000,19.80,Nao,Veiculo Comum,Caminhao + Reboque,00 Eixos,xxx
