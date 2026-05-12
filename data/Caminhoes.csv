@@ -1,13 +1,13 @@
 Codigo,Pbt1,Qtara,Tam,Pbt2,Tamax,AET,OBS,Nome,Desenho
 C1,12000,1,14,12000,14,Nao,Veiculo Comum,Caminhao,()===()
-C2,16000,1,14,16000,14,Nao,Veiculo Comum,Caminhao,()===@
-C3,23000,1,14,23000,14,Nao,Veiculo Comum,Caminhao,()===@(0)
-C4,19500,1,14,19500,14,Nao,Veiculo Comum,Caminhao,()===@()
-C5,19500,1,14,19500,14,Nao,Veiculo Comum,Caminhao,()===()@
-C6,22000,1,14,22000,14,Nao,Veiculo Comum,Caminhao,()()===@
-C7,29000,1,14,29000,14,Nao,Veiculo Comum,Caminhao,()()===@(0)
-C8,25500,1,14,25500,14,Nao,Veiculo Comum,Caminhao,()()===@()
-C9,25500,1,14,25500,14,Nao,Veiculo Comum,Caminhao,()()===()@
+C2,16000,1,14,16000,14,Nao,Veiculo Comum,Caminhao,()===(0)
+C3,23000,1,14,23000,14,Nao,Veiculo Comum,Caminhao,()===(0)(0)
+C4,19500,1,14,19500,14,Nao,Veiculo Comum,Caminhao,()===(0)()
+C5,19500,1,14,19500,14,Nao,Veiculo Comum,Caminhao,()===()(0)
+C6,22000,1,14,22000,14,Nao,Veiculo Comum,Caminhao,()()===(0)
+C7,29000,1,14,29000,14,Nao,Veiculo Comum,Caminhao,()()===(0)(0)
+C8,25500,1,14,25500,14,Nao,Veiculo Comum,Caminhao,()()===(0)()
+C9,25500,1,14,25500,14,Nao,Veiculo Comum,Caminhao,()()===()(0)
 CTS1,26000,2,16,26000,19.30,Nao,Veiculo Comum,Caminhao Trator + Semirreboque,xxx
 CTS2,33000,2,16,33000,19.30,Nao,Veiculo Comum,Caminhao Trator + Semirreboque,xxx
 CTS3,36000,2,16,36000,19.30,Nao,Veiculo Comum,Caminhao Trator + Semirreboque,xxx
