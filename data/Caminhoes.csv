@@ -1,13 +1,13 @@
 Codigo,Pbt1,Qtara,Tam,Pbt2,Tamax,AET,OBS,Nome,Eixos,Desenho
-C1,12000,1,14,12000,14,Nao,Veiculo Comum,Caminhao Simples,02 Eixos,⟦◎═══◎⟧
-C2,16000,1,14,16000,14,Nao,Veiculo Comum,Caminhao Simples,02 Eixos,⟦◎═══◉⟧
-C3,23000,1,14,23000,14,Nao,Veiculo Comum,Caminhao Simples,03 Eixos,⟦◎═══◉◉⟧
-C4,19500,1,14,19500,14,Nao,Veiculo Comum,Caminhao Simples,03 Eixos,⟦◎═══◉◎⟧
-C5,19500,1,14,19500,14,Nao,Veiculo Comum,Caminhao Simples,03 Eixos,⟦◎═══◎◉⟧
-C6,22000,1,14,22000,14,Nao,Veiculo Comum,Caminhao Simples,03 Eixos,⟦◎◎═══◉⟧
-C7,29000,1,14,29000,14,Nao,Veiculo Comum,Caminhao Simples,04 Eixos,⟦◎◎═══◉◉⟧
-C8,25500,1,14,25500,14,Nao,Veiculo Comum,Caminhao Simples,04 Eixos,⟦◎◎═══◉◎⟧
-C9,25500,1,14,25500,14,Nao,Veiculo Comum,Caminhao Simples,04 Eixos,⟦◎◎═══◎◉⟧
+C1,12000,1,14,12000,14,Nao,Veiculo Comum,Caminhao Simples,02 Eixos,⟦◎══◎⟧
+C2,16000,1,14,16000,14,Nao,Veiculo Comum,Caminhao Simples,02 Eixos,⟦◎══◉⟧
+C3,23000,1,14,23000,14,Nao,Veiculo Comum,Caminhao Simples,03 Eixos,⟦◎══◉◉⟧
+C4,19500,1,14,19500,14,Nao,Veiculo Comum,Caminhao Simples,03 Eixos,⟦◎══◉◎⟧
+C5,19500,1,14,19500,14,Nao,Veiculo Comum,Caminhao Simples,03 Eixos,⟦◎══◎◉⟧
+C6,22000,1,14,22000,14,Nao,Veiculo Comum,Caminhao Simples,03 Eixos,⟦◎◎══◉⟧
+C7,29000,1,14,29000,14,Nao,Veiculo Comum,Caminhao Simples,04 Eixos,⟦◎◎══◉◉⟧
+C8,25500,1,14,25500,14,Nao,Veiculo Comum,Caminhao Simples,04 Eixos,⟦◎◎══◉◎⟧
+C9,25500,1,14,25500,14,Nao,Veiculo Comum,Caminhao Simples,04 Eixos,⟦◎◎══◎◉⟧
 CTS1,26000,2,16,26000,19.30,Nao,Veiculo Comum,Caminhao Trator + Semirreboque,00 Eixos,xxx
 CTS2,33000,2,16,33000,19.30,Nao,Veiculo Comum,Caminhao Trator + Semirreboque,00 Eixos,xxx
 CTS3,36000,2,16,36000,19.30,Nao,Veiculo Comum,Caminhao Trator + Semirreboque,00 Eixos,xxx
