@@ -48,8 +48,7 @@ qt_tara = int(linha["Qtara"])
 nome_caminhao = linha["Nome"]
 eixos = linha["Eixos"]
 desenho = linha["Desenho"]
-codigo = linha["Codigo"]
-st.info(f" **{codigo}** / **{nome_caminhao}** / **{eixos}** / **{desenho}**")
+st.info(f" **{nome_caminhao}** / **{eixos}** / **{desenho}**")
 
 # Entradas por unidade (placa + tara)
 placas = []
