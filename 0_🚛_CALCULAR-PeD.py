@@ -46,9 +46,10 @@ with col3:
 linha = tabela[tabela["Codigo"] == tipo].iloc[0]
 qt_tara = int(linha["Qtara"])
 nome_caminhao = linha["Nome"]
-desenho = linha["Desenho"]
 eixos = linha["Eixos"]
-st.info(f" **{nome_caminhao}** / **{eixos}** / **{desenho}**")
+desenho = linha["Desenho"]
+codigo = linha["Codigo"]
+st.info(f" **{codigo}** / **{nome_caminhao}** / **{eixos}** / **{desenho}**")
 
 # Entradas por unidade (placa + tara)
 placas = []
