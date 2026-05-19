@@ -66,14 +66,14 @@ CTSS6,45000,3,17.5,46500,19.80,Nao,Veiculo Comum,Cam Trator + 2 Semirreboques,06
 CTSS7,45000,3,17.5,50000,19.80,Nao,Veiculo Comum,Cam Trator + 2 Semirreboques,06 Eixos,◢⬤══⊚⟧━━⊚⊚⟧━━⊚⊚⟧
 CTSS8,45000,3,17.5,57000,19.80,Nao,Veiculo Comum,Cam Trator + 2 Semirreboques,07 Eixos,◢⬤══⊚⊚⟧━━⊚⊚⟧━━⊚⊚⟧
 CTSS9,45000,3,17.5,53500,19.80,Nao,Veiculo Comum,Cam Trator + 2 Semirreboques,07 Eixos,◢⬤══⊚⬤⟧━━⊚⊚⟧━━⊚⊚⟧
-CTSR1+,46000,3,19.8,46000,30,Sim,Veiculo Longo,Cam Trator + Semirreboque + Reboque,05 Eixos,xxx
-CTSR2+,53000,3,19.8,53000,30,Sim,Veiculo Longo,Cam Trator + Semirreboque + Reboque,06 Eixos,xxx
-CTSR3+,53000,3,19.8,53000,30,Sim,Veiculo Longo,Cam Trator + Semirreboque + Reboque,06 Eixos,xxx
-CTSR4+,60000,3,25,60000,30,Sim,Veiculo Longo,Cam Trator + Semirreboque + Reboque,07 Eixos,xxx
-CTSR5+,67000,3,25,67000,30,Sim,Veiculo Longo,Cam Trator + Semirreboque + Reboque,08 Eixos,xxx
-CTSR6+,74000,3,25,74000,30,Sim,Veiculo Longo,Cam Trator + Semirreboque + Reboque,09 Eixos,xxx
-CTSR7+,66000,3,25,66000,30,Sim,Veiculo Longo,Cam Trator + Semirreboque + Reboque,08 Eixos,xxx
-CTSR8+,73000,3,25,73000,30,Sim,Veiculo Longo,Cam Trator + Semirreboque + Reboque,09 Eixos,xxx
+CTSR1+,46000,3,19.8,46000,30,Sim,Veiculo Longo,Cam Trator + Semirreboque + Reboque,05 Eixos,◢⬤══⊚⟧━━⊚⟧ -⟦⊚══⊚⟧
+CTSR2+,53000,3,19.8,53000,30,Sim,Veiculo Longo,Cam Trator + Semirreboque + Reboque,06 Eixos,◢⬤══⊚⊚⟧━━⊚⟧ -⟦⊚══⊚⟧
+CTSR3+,53000,3,19.8,53000,30,Sim,Veiculo Longo,Cam Trator + Semirreboque + Reboque,06 Eixos,◢⬤══⊚⟧━━⊚⟧ -⟦⊚══⊚⊚⟧
+CTSR4+,60000,3,25,60000,30,Sim,Veiculo Longo,Cam Trator + Semirreboque + Reboque,07 Eixos,◢⬤══⊚⊚⟧━━⊚⊚⟧ -⟦⊚══⊚⟧
+CTSR5+,67000,3,25,67000,30,Sim,Veiculo Longo,Cam Trator + Semirreboque + Reboque,08 Eixos,◢⬤══⊚⊚⟧━━⊚⊚⟧ -⟦⊚══⊚⊚⟧
+CTSR6+,74000,3,25,74000,30,Sim,Veiculo Longo,Cam Trator + Semirreboque + Reboque,09 Eixos,◢⬤══⊚⊚⟧━━⊚⊚⟧ -⟦⊚⊚══⊚⊚⟧
+CTSR7+,66000,3,25,66000,30,Sim,Veiculo Longo,Cam Trator + Semirreboque + Reboque,08 Eixos,◢⬤⬤══⊚⊚⟧━━⊚⊚⟧ -⟦⊚══⊚⟧
+CTSR8+,73000,3,25,73000,30,Sim,Veiculo Longo,Cam Trator + Semirreboque + Reboque,09 Eixos,◢⬤⬤══⊚⊚⟧━━⊚⊚⟧ -⟦⊚══⊚⊚⟧
 CTSS1+,36000,3,19.8,36000,30,Sim,Veiculo Longo,Cam Trator + 2 Semirreboques,04 Eixos,xxx
 CTSS2+,43000,3,19.8,43000,30,Sim,Veiculo Longo,Cam Trator + 2 Semirreboques,05 Eixos,xxx
 CTSS3+,39500,3,19.8,39500,30,Sim,Veiculo Longo,Cam Trator + 2 Semirreboques,05 Eixos,xxx
