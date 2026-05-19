@@ -57,15 +57,15 @@ CTSR4,45000,3,17.5,53000,19.80,Nao,Veiculo Comum,Cam Trator + Semirreboque + Reb
 CTSR5,45000,3,17.5,49500,19.80,Nao,Veiculo Comum,Cam Trator + Semirreboque + Reboque,06 Eixos,◢⬤══⊚⬤⟧━━⊚⟧ -⟦⊚══⊚⟧
 CTSR6,45000,3,17.5,56500,19.80,Nao,Veiculo Comum,Cam Trator + Semirreboque + Reboque,07 Eixos,◢⬤══⊚⬤⟧━━⊚⊚⟧ -⟦⊚══⊚⟧
 CTSR7,45000,3,17.5,56500,19.80,Nao,Veiculo Comum,Cam Trator + Semirreboque + Reboque,07 Eixos,◢⬤══⊚⬤⟧━━⊚⟧ -⟦⊚══⊚⊚⟧
-CTSS1,36000,3,17.5,36000,19.80,Nao,Veiculo Comum,Cam Trator + 2 Semirreboques,04 Eixos,xxx
-CTSS2,43000,3,17.5,43000,19.80,Nao,Veiculo Comum,Cam Trator + 2 Semirreboques,05 Eixos,xxx
-CTSS3,39500,3,17.5,39500,19.80,Nao,Veiculo Comum,Cam Trator + 2 Semirreboques,05 Eixos,xxx
-CTSS4,43000,3,17.5,43000,19.80,Nao,Veiculo Comum,Cam Trator + 2 Semirreboques,05 Eixos,xxx
-CTSS5,45000,3,17.5,50000,19.80,Nao,Veiculo Comum,Cam Trator + 2 Semirreboques,06 Eixos,xxx
-CTSS6,45000,3,17.5,46500,19.80,Nao,Veiculo Comum,Cam Trator + 2 Semirreboques,06 Eixos,xxx
-CTSS7,45000,3,17.5,50000,19.80,Nao,Veiculo Comum,Cam Trator + 2 Semirreboques,06 Eixos,xxx
-CTSS8,45000,3,17.5,57000,19.80,Nao,Veiculo Comum,Cam Trator + 2 Semirreboques,07 Eixos,xxx
-CTSS9,45000,3,17.5,53500,19.80,Nao,Veiculo Comum,Cam Trator + 2 Semirreboques,07 Eixos,xxx
+CTSS1,36000,3,17.5,36000,19.80,Nao,Veiculo Comum,Cam Trator + 2 Semirreboques,04 Eixos,◢⬤══⊚⟧━━⊚⟧━━⊚⟧
+CTSS2,43000,3,17.5,43000,19.80,Nao,Veiculo Comum,Cam Trator + 2 Semirreboques,05 Eixos,◢⬤══⊚⊚⟧━━⊚⟧━━⊚⟧
+CTSS3,39500,3,17.5,39500,19.80,Nao,Veiculo Comum,Cam Trator + 2 Semirreboques,05 Eixos,◢⬤══⊚⬤⟧━━⊚⟧━━⊚⟧
+CTSS4,43000,3,17.5,43000,19.80,Nao,Veiculo Comum,Cam Trator + 2 Semirreboques,05 Eixos,◢⬤══⊚⟧━━⊚⊚⟧━━⊚⟧
+CTSS5,45000,3,17.5,50000,19.80,Nao,Veiculo Comum,Cam Trator + 2 Semirreboques,06 Eixos,◢⬤══⊚⊚⟧━━⊚⊚⟧━━⊚⟧
+CTSS6,45000,3,17.5,46500,19.80,Nao,Veiculo Comum,Cam Trator + 2 Semirreboques,06 Eixos,◢⬤══⊚⬤⟧━━⊚⊚⟧━━⊚⟧
+CTSS7,45000,3,17.5,50000,19.80,Nao,Veiculo Comum,Cam Trator + 2 Semirreboques,06 Eixos,◢⬤══⊚⟧━━⊚⊚⟧━━⊚⊚⟧
+CTSS8,45000,3,17.5,57000,19.80,Nao,Veiculo Comum,Cam Trator + 2 Semirreboques,07 Eixos,◢⬤══⊚⊚⟧━━⊚⊚⟧━━⊚⊚⟧
+CTSS9,45000,3,17.5,53500,19.80,Nao,Veiculo Comum,Cam Trator + 2 Semirreboques,07 Eixos,◢⬤══⊚⬤⟧━━⊚⊚⟧━━⊚⊚⟧
 CTSR1+,46000,3,19.8,46000,30,Sim,Veiculo Longo,Cam Trator + Semirreboque + Reboque,05 Eixos,xxx
 CTSR2+,53000,3,19.8,53000,30,Sim,Veiculo Longo,Cam Trator + Semirreboque + Reboque,06 Eixos,xxx
 CTSR3+,53000,3,19.8,53000,30,Sim,Veiculo Longo,Cam Trator + Semirreboque + Reboque,06 Eixos,xxx
