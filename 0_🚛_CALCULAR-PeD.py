@@ -39,38 +39,24 @@ col1, col2, col3 = st.columns(3)
 with col1:
     st.markdown("""
 <style>
-div[data-baseweb="select"] input {
-    caret-color: transparent;
-}
+div[data-baseweb="select"] input {caret-color: transparent;}
 </style>
 """, unsafe_allow_html=True)
 
 # JavaScript para bloquear teclado virtual
 components.html("""
 <script>
-function bloquearTeclado() {
-    const selects = window.parent.document.querySelectorAll(
-        'div[data-baseweb="select"] input'
-    );
+function bloquearTeclado() {const selects = window.parent.document.querySelectorAll('div[data-baseweb="select"] input');
 
-    selects.forEach((input) => {
-        input.setAttribute("readonly", true);
-        input.setAttribute("inputmode", "none");
-    });
-}
+    selects.forEach((input) => {input.setAttribute("readonly", true);input.setAttribute("inputmode", "none");});}
 
 setTimeout(bloquearTeclado, 500);
 </script>
 """, height=0)
 
-# Selectbox
-tipo = st.selectbox(
-    "Selecione o Tipo de Caminhão",
-    tabela["Codigo"].unique(),
-    key="tipo"
-)
+    # Selectbox
+    tipo = st.selectbox("Selecione o Tipo de Caminhão",tabela["Codigo"].unique(),key="tipo")
 
-st.write(tipo)
 with col2:
     comprimento = st.number_input("Comprimento (em metros)", min_value=0.0, key="comprimento")
 with col3:
