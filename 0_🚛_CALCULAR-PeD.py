@@ -36,20 +36,7 @@ st.title("📦 Apuração Pesos e Dimensões")
 # Seletor do tipo + entradas principais
 col1, col2, col3 = st.columns(3)
 with col1:
-    st.markdown("""
-<style>
-div[data-baseweb="select"] input {caret-color: transparent;}
-
-div[data-baseweb="select"] input::placeholder {color: transparent;}
-
-div[data-baseweb="select"] input {pointer-events: none;}
-</style>
-""", unsafe_allow_html=True)
-    tipo = st.selectbox(
-    "Selecione o Tipo de Caminhão",
-    tabela["Codigo"].unique(),
-    key="tipo"
-)
+    tipo = st.selectbox("Selecione o Tipo de Caminhão", tabela["Codigo"].unique(), key="tipo")
 with col2:
     comprimento = st.number_input("Comprimento (em metros)", min_value=0.0, key="comprimento")
 with col3:
