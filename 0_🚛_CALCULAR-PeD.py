@@ -54,8 +54,8 @@ setTimeout(bloquearTeclado, 500);
 </script>
 """, height=0)
 
-    # Selectbox
-    tipo = st.selectbox("Selecione o Tipo de Caminhão",tabela["Codigo"].unique(),key="tipo")
+# Selectbox
+tipo = st.selectbox("Selecione o Tipo de Caminhão",tabela["Codigo"].unique(),key="tipo")
 
 with col2:
     comprimento = st.number_input("Comprimento (em metros)", min_value=0.0, key="comprimento")
