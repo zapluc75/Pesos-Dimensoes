@@ -4,6 +4,7 @@ import pandas as pd
 import streamlit as st
 import hashlib
 import time
+import streamlit.components.v1 as components
 
 def autenticar(usuario, senha): #validar o login
     usuarios = st.secrets["usuarios"]
@@ -101,3 +102,46 @@ def gerar_tabela_formatada(dados):
 
 def to_upper(key):
     st.session_state[key] = st.session_state[key].strip().upper()
+
+def selectbox_sem_teclado(label, options, key=None):
+    """
+    Selectbox Streamlit com bloqueio de teclado virtual
+    (Android/mobile) mantendo o dropdown funcional.
+    """
+
+    # CSS opcional
+    st.markdown("""
+    <style>
+    div[data-baseweb="select"] input {
+        caret-color: transparent;
+    }
+    </style>
+    """, unsafe_allow_html=True)
+
+    # JS para bloquear teclado
+    components.html("""
+    <script>
+    function bloquearTeclado() {
+
+        const selects =
+        window.parent.document.querySelectorAll(
+            'div[data-baseweb="select"] input'
+        );
+
+        selects.forEach((input) => {
+            input.setAttribute("readonly", true);
+            input.setAttribute("inputmode", "none");
+            input.blur();
+        });
+    }
+
+    setTimeout(bloquearTeclado, 300);
+
+    </script>
+    """, height=0)
+
+    return st.selectbox(
+        label,
+        options,
+        key=key
+    )
