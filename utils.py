@@ -103,18 +103,15 @@ def gerar_tabela_formatada(dados):
 def to_upper(key):
     st.session_state[key] = st.session_state[key].strip().upper()
 
-def selectbox_sem_teclado():
+def selectbox_sem_teclado(label, options, key=None):
     """
     Selectbox Streamlit com bloqueio de teclado virtual
+    (Android/mobile) mantendo o dropdown funcional.
     """
 
     # CSS opcional
     st.markdown("""
     <style>
-    iframe[height="0"] {
-        display: none;
-    }
-    
     div[data-baseweb="select"] input {
         caret-color: transparent;
     }
@@ -133,10 +130,18 @@ def selectbox_sem_teclado():
 
         selects.forEach((input) => {
             input.setAttribute("readonly", true);
-            input.setAttribute("inputmode", "none");            
+            input.setAttribute("inputmode", "none");
+            input.blur();
         });
     }
 
-    setInterval(bloquearTeclado, 1000);
+    setTimeout(bloquearTeclado, 300);
+
     </script>
     """, height=0)
+
+    return st.selectbox(
+        label,
+        options,
+        key=key
+    )
