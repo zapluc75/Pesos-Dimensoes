@@ -112,10 +112,15 @@ def selectbox_sem_teclado(label, options, key=None):
     # CSS opcional
     st.markdown("""
     <style>
+    div[data-baseweb="select"] {
+        margin-top: 30px;
+    }
+
     div[data-baseweb="select"] input {
         caret-color: transparent;
     }
     </style>
+""", unsafe_allow_html=True)
     """, unsafe_allow_html=True)
 
     # JS para bloquear teclado
