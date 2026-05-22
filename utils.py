@@ -113,7 +113,7 @@ def selectbox_sem_teclado(label, options, key=None):
     st.markdown("""
     <style>
     div[data-baseweb="select"] {
-        margin-top: 30px;
+        margin-top: 15px;
     }
 
     div[data-baseweb="select"] input {
