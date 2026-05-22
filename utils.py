@@ -121,8 +121,7 @@ def selectbox_sem_teclado(label, options, key=None):
     }
     </style>
 """, unsafe_allow_html=True)
-    """, unsafe_allow_html=True)
-
+    
     # JS para bloquear teclado
     components.html("""
     <script>
