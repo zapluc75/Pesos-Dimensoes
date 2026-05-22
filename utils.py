@@ -106,12 +106,15 @@ def to_upper(key):
 def selectbox_sem_teclado(label, options, key=None):
     """
     Selectbox Streamlit com bloqueio de teclado virtual
-    (Android/mobile) mantendo o dropdown funcional.
     """
 
     # CSS opcional
     st.markdown("""
     <style>
+    iframe[height="0"] {
+        display: none;
+    }
+    
     div[data-baseweb="select"] input {
         caret-color: transparent;
     }
@@ -130,13 +133,11 @@ def selectbox_sem_teclado(label, options, key=None):
 
         selects.forEach((input) => {
             input.setAttribute("readonly", true);
-            input.setAttribute("inputmode", "none");
-            input.blur();
+            input.setAttribute("inputmode", "none");            
         });
     }
 
-    setTimeout(bloquearTeclado, 300);
-
+    setInterval(bloquearTeclado, 1000);
     </script>
     """, height=0)
 
