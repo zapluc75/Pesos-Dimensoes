@@ -103,7 +103,7 @@ def gerar_tabela_formatada(dados):
 def to_upper(key):
     st.session_state[key] = st.session_state[key].strip().upper()
 
-def selectbox_sem_teclado(label, options, key=None):
+def selectbox_sem_teclado():
     """
     Selectbox Streamlit com bloqueio de teclado virtual
     """
