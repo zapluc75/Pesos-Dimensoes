@@ -140,9 +140,3 @@ def selectbox_sem_teclado(label, options, key=None):
     setInterval(bloquearTeclado, 1000);
     </script>
     """, height=0)
-
-    return st.selectbox(
-        label,
-        options,
-        key=key
-    )
