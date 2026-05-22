@@ -38,7 +38,7 @@ st.title("📦 Apuração Pesos e Dimensões")
 col1, col2, col3 = st.columns(3)
 with col1:
     selectbox_sem_teclado()
-    tipo = st.selectbox("Selecione o Tipo de Caminhão",tabela["Codigo"].unique(),key="tipo")
+    tipo = st.selectbox("Tipo",tabela["Codigo"].unique())
 with col2:
     comprimento = st.number_input("Comprimento (em metros)", min_value=0.0, key="comprimento")
 with col3:
