@@ -39,8 +39,10 @@ col1, col2, col3 = st.columns(3)
 with col1:
     tipo = selectbox_sem_teclado("Selecione o Tipo de Caminhão",tabela["Codigo"].unique(),key="tipo")
 with col2:
+    st.write("")
     comprimento = st.number_input("Comprimento (em metros)", min_value=0.0, key="comprimento")
 with col3:
+    st.write("")
     peso_liqnf = st.number_input("Peso Líquido da Nota Fiscal (Kg)", min_value=0.0, key="peso_liqnf")
 
 # Linha selecionada e dados do tipo
