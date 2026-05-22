@@ -39,7 +39,7 @@ col1, col2, col3 = st.columns(3)
 with col1:
     tipo = selectbox_sem_teclado("Selecione o Tipo de Caminhão",tabela["Codigo"].unique(),key="tipo")
 with col2:
-    st.markdown("""<div style="margin-top: 35px;"></div>""",unsafe_allow_html=True)
+    st.markdown("""<div style="margin-top: 30px;"></div>""",unsafe_allow_html=True)
     comprimento = st.number_input("Comprimento (em metros)", min_value=0.0, key="comprimento")
 with col3:
     st.markdown("""<div style="margin-top: 35px;"></div>""",unsafe_allow_html=True)
