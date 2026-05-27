@@ -37,19 +37,19 @@ CTS26,45000,2,16,46000,19.30,Nao,Veiculo Comum,Cam Trator + Semirreboque,06,◢�
 CTS27,42500,2,16,42500,19.30,Nao,Veiculo Comum,Cam Trator + Semirreboque,06,◢⬤⬤══⊚⬤⟧━━⊚⊚⟧
 CTS28,45000,2,16,49000,19.30,Nao,Veiculo Comum,Cam Trator + Semirreboque,06,◢⬤⬤══⊚⊚⟧━━⊚-⊚⟧
 CTS29,45000,2,16,45500,19.30,Nao,Veiculo Comum,Cam Trator + Semirreboque,06,◢⬤⬤══⊚⬤⟧━━⊚-⊚⟧
-CR1,36000,2,17.5,36000,19.80,Nao,Veiculo Comum,Caminhao + Reboque,04,xxx
-CR2,43000,2,17.5,43000,19.80,Nao,Veiculo Comum,Caminhao + Reboque,05,xxx
-CR3,45000,2,17.5,50000,19.80,Nao,Veiculo Comum,Caminhao + Reboque,06,xxx
-CR4,43000,2,17.5,43000,19.80,Nao,Veiculo Comum,Caminhao + Reboque,05,xxx
-CR5,45000,2,17.5,50000,19.80,Nao,Veiculo Comum,Caminhao + Reboque,06,xxx
-CR6,45000,2,17.5,57000,19.80,Nao,Veiculo Comum,Caminhao + Reboque,07,xxx
-CR7,39500,2,17.5,39500,19.80,Nao,Veiculo Comum,Caminhao + Reboque,05,xxx
-CR8,45000,2,17.5,46500,19.80,Nao,Veiculo Comum,Caminhao + Reboque,06,xxx
-CR9,45000,2,17.5,53500,19.80,Nao,Veiculo Comum,Caminhao + Reboque,07,xxx
-CR10,45000,2,17.5,49000,19.80,Nao,Veiculo Comum,Caminhao + Reboque,06,xxx
-CR11,45000,2,17.5,56000,19.80,Nao,Veiculo Comum,Caminhao + Reboque,07,xxx
-CR12,45000,2,17.5,45500,19.80,Nao,Veiculo Comum,Caminhao + Reboque,06,xxx
-CR13,45000,2,17.5,52500,19.80,Nao,Veiculo Comum,Caminhao + Reboque,07,xxx
+CR1,36000,2,17.5,36000,19.80,Nao,Veiculo Comum,Caminhao + Reboque,04,◢⬤══⊚⟧ -⟦⊚══⊚⟧
+CR2,43000,2,17.5,43000,19.80,Nao,Veiculo Comum,Caminhao + Reboque,05,◢⬤══⊚⟧ -⟦⊚══⊚⊚⟧
+CR3,45000,2,17.5,50000,19.80,Nao,Veiculo Comum,Caminhao + Reboque,06,◢⬤══⊚⟧ -⟦⊚⊚══⊚⊚⟧
+CR4,43000,2,17.5,43000,19.80,Nao,Veiculo Comum,Caminhao + Reboque,05,◢⬤══⊚⊚⟧ -⟦⊚══⊚⟧
+CR5,45000,2,17.5,50000,19.80,Nao,Veiculo Comum,Caminhao + Reboque,06,◢⬤══⊚⊚⟧ -⟦⊚══⊚⊚⟧
+CR6,45000,2,17.5,57000,19.80,Nao,Veiculo Comum,Caminhao + Reboque,07,◢⬤══⊚⊚⟧ -⟦⊚⊚══⊚⊚⟧
+CR7,39500,2,17.5,39500,19.80,Nao,Veiculo Comum,Caminhao + Reboque,05,◢⬤══⬤⊚⟧ -⟦⊚══⊚⟧
+CR8,45000,2,17.5,46500,19.80,Nao,Veiculo Comum,Caminhao + Reboque,06,◢⬤══⬤⊚⟧ -⟦⊚══⊚⊚⟧
+CR9,45000,2,17.5,53500,19.80,Nao,Veiculo Comum,Caminhao + Reboque,07,◢⬤══⬤⊚⟧ -⟦⊚⊚══⊚⊚⟧
+CR10,45000,2,17.5,49000,19.80,Nao,Veiculo Comum,Caminhao + Reboque,06,◢⬤⬤══⊚⊚⟧ -⟦⊚══⊚⟧
+CR11,45000,2,17.5,56000,19.80,Nao,Veiculo Comum,Caminhao + Reboque,07,◢⬤⬤══⊚⊚⟧ -⟦⊚══⊚⊚⟧
+CR12,45000,2,17.5,45500,19.80,Nao,Veiculo Comum,Caminhao + Reboque,06,◢⬤⬤══⬤⊚⟧ -⟦⊚══⊚⟧
+CR13,45000,2,17.5,52500,19.80,Nao,Veiculo Comum,Caminhao + Reboque,07,◢⬤⬤══⬤⊚⟧ -⟦⊚══⊚⊚⟧
 CTSR1,45000,3,17.5,46000,19.80,Nao,Veiculo Comum,Cam Trator + Semirreboque + Reboque,05,◢⬤══⊚⟧━━⊚⟧ -⟦⊚══⊚⟧
 CTSR2,45000,3,17.5,53000,19.80,Nao,Veiculo Comum,Cam Trator + Semirreboque + Reboque,06,◢⬤══⊚⟧━━⊚⊚⟧ -⟦⊚══⊚⟧
 CTSR3,45000,3,17.5,53000,19.80,Nao,Veiculo Comum,Cam Trator + Semirreboque + Reboque,06,◢⬤══⊚⟧━━⊚⟧ -⟦⊚══⊚⊚⟧
