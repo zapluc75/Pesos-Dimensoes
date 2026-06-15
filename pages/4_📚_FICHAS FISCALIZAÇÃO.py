@@ -20,6 +20,7 @@ pdf_files = [
     "data/Equip_Obrig_Desac.pdf",
     "data/Dimen_Sem_Aut.pdf",
     "data/Exces_Pes_PBTC.pdf",
+    "data/Toxc_Exam_Venc.pdf"
 ]
 
 cols = st.columns(3) #Cria layout em 3 colunas
