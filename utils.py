@@ -109,42 +109,39 @@ def selectbox_sem_teclado(label, options, key=None):
     (Android/mobile) mantendo o dropdown funcional.
     """
 
-    valor = st.selectbox(label, options, key=key)
+    # CSS opcional
+    st.markdown("""
+    <style>
+    div[data-baseweb="select"] input {
+        caret-color: transparent;
+    }
+    </style>
+    """, unsafe_allow_html=True)
     
     # JS para bloquear teclado
     components.html("""
     <script>
-     (function () {
-        const doc = window.parent.document;
+    function bloquearTeclado() {
 
-        function aplicar() {
-            doc.querySelectorAll('div[data-baseweb="select"] input')
-                .forEach(input => {
+        const selects =
+        window.parent.document.querySelectorAll(
+            'div[data-baseweb="select"] input'
+        );
 
-                    input.readOnly = true;
-                    input.inputMode = "none";
-
-                    if (!input.dataset.semTeclado) {
-
-                        input.addEventListener("focus", () => {
-                            input.blur();
-                        });
-
-                        input.dataset.semTeclado = "1";
-                    }
-                });
-        }
-
-        aplicar();
-
-        const observer = new MutationObserver(aplicar);
-
-        observer.observe(doc.body, {
-            childList: true,
-            subtree: true
+        selects.forEach((input) => {
+            input.setAttribute("readonly", true);
+            input.setAttribute("inputmode", "none");
+            input.blur();
         });
-    })();
+    }
+
+    setTimeout(bloquearTeclado, 300);
+
     </script>
     """, height=0)
-    
-    return valor
+
+    return st.selectbox(
+        label,
+        options,
+        key=key
+    )
