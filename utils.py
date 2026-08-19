@@ -110,38 +110,50 @@ def selectbox_sem_teclado(label, options, key=None):
     """
 
     # CSS opcional
-    st.markdown("""
-    <style>
-    div[data-baseweb="select"] input {
-        caret-color: transparent;
-    }
-    </style>
-    """, unsafe_allow_html=True)
+    #st.markdown("""
+    #<style>
+    #div[data-baseweb="select"] input {
+        #caret-color: transparent;
+    #}
+    #</style>
+    #""", unsafe_allow_html=True)
+
+    valor = st.selectbox(label, options, key=key)
     
     # JS para bloquear teclado
     components.html("""
     <script>
-    function bloquearTeclado() {
+     (function () {
+        const doc = window.parent.document;
 
-        const selects =
-        window.parent.document.querySelectorAll(
-            'div[data-baseweb="select"] input'
-        );
+        function aplicar() {
+            doc.querySelectorAll('div[data-baseweb="select"] input')
+                .forEach(input => {
 
-        selects.forEach((input) => {
-            input.setAttribute("readonly", true);
-            input.setAttribute("inputmode", "none");
-            input.blur();
+                    input.readOnly = true;
+                    input.inputMode = "none";
+
+                    if (!input.dataset.semTeclado) {
+
+                        input.addEventListener("focus", () => {
+                            input.blur();
+                        });
+
+                        input.dataset.semTeclado = "1";
+                    }
+                });
+        }
+
+        aplicar();
+
+        const observer = new MutationObserver(aplicar);
+
+        observer.observe(doc.body, {
+            childList: true,
+            subtree: true
         });
-    }
-
-    setTimeout(bloquearTeclado, 300);
-
+    })();
     </script>
     """, height=0)
-
-    return st.selectbox(
-        label,
-        options,
-        key=key
-    )
+    
+    return valor
