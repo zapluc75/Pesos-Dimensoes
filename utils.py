@@ -109,15 +109,6 @@ def selectbox_sem_teclado(label, options, key=None):
     (Android/mobile) mantendo o dropdown funcional.
     """
 
-    # CSS opcional
-    #st.markdown("""
-    #<style>
-    #div[data-baseweb="select"] input {
-        #caret-color: transparent;
-    #}
-    #</style>
-    #""", unsafe_allow_html=True)
-
     valor = st.selectbox(label, options, key=key)
     
     # JS para bloquear teclado
