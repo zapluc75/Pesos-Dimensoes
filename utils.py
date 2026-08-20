@@ -105,43 +105,16 @@ def to_upper(key):
 
 def selectbox_sem_teclado(label, options, key=None):
     """
-    Selectbox Streamlit com bloqueio de teclado virtual
-    (Android/mobile) mantendo o dropdown funcional.
+    Selectbox sem pesquisa/digitação.
+
+    Compatível com Streamlit 1.62.0.
+    O usuário apenas abre a lista e seleciona uma opção.
     """
 
-    # CSS opcional
-    st.markdown("""
-    <style>
-    div[data-baseweb="select"] input {
-        caret-color: transparent;
-    }
-    </style>
-    """, unsafe_allow_html=True)
-    
-    # JS para bloquear teclado
-    components.html("""
-    <script>
-    function bloquearTeclado() {
-
-        const selects =
-        window.parent.document.querySelectorAll(
-            'div[data-baseweb="select"] input'
-        );
-
-        selects.forEach((input) => {
-            input.setAttribute("readonly", true);
-            input.setAttribute("inputmode", "none");
-            input.blur();
-        });
-    }
-
-    setTimeout(bloquearTeclado, 300);
-
-    </script>
-    """, height=0)
-
     return st.selectbox(
-        label,
-        options,
-        key=key
+        label=label,
+        options=options,
+        key=key,
+        filter_mode=None,
+        accept_new_options=False,
     )
