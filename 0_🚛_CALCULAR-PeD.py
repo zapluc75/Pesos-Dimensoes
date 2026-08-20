@@ -35,7 +35,7 @@ st.info("⬅️ Utilize o menu lateral para navegar entre as funcionalidades.")
 st.title("📦 Apuração Pesos e Dimensões")
 
 # Seletor do tipo + entradas principais
-col1, col2, col3 = st.columns([1, 1, 1])
+col1, col2, col3 = st.columns([4, 4, 4])
 with col1:
     tipo = selectbox_sem_teclado("Selecione o Tipo de Caminhão",tabela["Codigo"].unique(),key="tipo")
 with col2:
