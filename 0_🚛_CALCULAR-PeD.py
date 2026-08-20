@@ -74,13 +74,17 @@ for key in ["calculado", "validado", "resultado", "dados_tipo"]:
 # Validação
 if st.button("✅ Validar Dado(s)"):
     validado = True
-    for i in range(qt_tara):
-        placa_i = placas[i]
-        if len(placa_i) != 7 or not validar_placa(placa_i):
-            st.error(f"❌ Placa {i+1} inválida.")
-            validado = False
-        else:
-            st.success(f"✅ Placa {i+1} válida: {placa_i} | Tara: {taras[i]} Kg")
+
+    with st.status("Validando placas...", expanded=True):
+        for i in range(qt_tara):
+            placa = placas[i]
+
+            if len(placa) != 7 or not validar_placa(placa):
+                st.write(f"❌ Placa {i+1}: inválida")
+                validado = False
+            else:
+                st.write(f"✅ Placa {i+1}: {placa}")
+
     st.session_state.validado = validado
 
 # Cálculo
