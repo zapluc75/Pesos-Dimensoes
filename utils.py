@@ -103,18 +103,28 @@ def gerar_tabela_formatada(dados):
 def to_upper(key):
     st.session_state[key] = st.session_state[key].strip().upper()
 
-def selectbox_sem_teclado(label, options, key=None):
+def selectbox_sem_teclado(
+    label,
+    options,
+    key=None,
+    index=0,
+    placeholder=None,
+    format_func=lambda x: x,
+    disabled=False,
+):
     """
     Selectbox sem pesquisa/digitação.
-
     Compatível com Streamlit 1.62.0.
-    O usuário apenas abre a lista e seleciona uma opção.
     """
 
     return st.selectbox(
         label=label,
         options=options,
         key=key,
+        index=index,
+        placeholder=placeholder,
+        format_func=format_func,
+        disabled=disabled,
         filter_mode=None,
         accept_new_options=False,
     )
