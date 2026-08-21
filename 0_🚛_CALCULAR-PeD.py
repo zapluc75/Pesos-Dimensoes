@@ -96,7 +96,7 @@ if st.session_state.validado:
             calc_click = st.button ("❌ C A L C U L A R ", use_container_width=True)
         if calc_click: 
             pbt, limite, excesso = calcular_excesso(linha, taras, peso_liqnf, comprimento)
-            dados_exportar = {
+            resultado_calculo = {
                 "TipoCaminhao": tipo,
                 "Placas": ";".join(placas),
                 "TaraTotal": int(sum(taras)),
@@ -105,11 +105,10 @@ if st.session_state.validado:
                 "PBT-PBTC": float(pbt),
                 "LimiteLegal": float(limite),
                 "Excesso": float(excesso),
-                "Usuario": st.session_state.get("usuario_logado", "desconhecido"),
             }
             
             st.session_state.calculado = True
-            st.session_state.resultado = dados_exportar
+            st.session_state.resultado = resultado_calculo
             st.session_state["dados_tipo"] = {
                 "TipoCam": tipo,
                 "TamMaxPermit": f"{linha['Tamax']:.1f}",
