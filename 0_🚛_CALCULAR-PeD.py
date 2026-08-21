@@ -55,7 +55,7 @@ st.success(f" **{nome_caminhao}** / **{eixos}** eixos / **{desenho}** ")
 placas = []
 taras = []
 
-st.subheader("🚛 Informações de cada unidade (Placa + Tara)")
+#st.subheader("🚛 Informações de cada unidade (Placa + Tara)")
 for i in range(qt_tara):
     c1, c2 = st.columns(2)
     with c1:
