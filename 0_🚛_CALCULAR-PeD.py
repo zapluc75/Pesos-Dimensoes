@@ -51,29 +51,25 @@ eixos = linha["Eixos"]
 desenho = linha["Desenho"]
 st.success(f" **{nome_caminhao}** / **{eixos}** eixos / **{desenho}** ")
 
-# Entradas por unidade (placa + tara) nova versão 1.62.0
-with st.form("form_placas"):
-    placas = []
-    taras = []
+# Entradas por unidade (placa + tara)
+placas = []
+taras = []
 
-    for i in range(qt_tara):
-        c1, c2 = st.columns(2, vertical_alignment="bottom")
+st.subheader("🚛 Informações de cada unidade (Placa + Tara)")
+for i in range(qt_tara):
+    c1, c2 = st.columns(2)
+    with c1:
+        key = f"placa_{i}"
+        st.text_input(f"Placa {i+1}",key=key,on_change=to_upper,args=(key,))
+        placa = st.session_state.get(key, "")
+    with c2:
+        tara = st.number_input(f"Tara {i+1} (Kg)", min_value=0.0, key=f"tara_{i}")
+    placas.append(placa)
+    taras.append(tara)
 
-        with c1:
-            placa = st.text_input(f"Placa {i+1}", key=f"placa_{i}")
-
-        with c2:
-            tara = st.number_input(
-                f"Tara {i+1} (Kg)",
-                min_value=0.0,
-                key=f"tara_{i}"
-            )
-
-        placas.append(placa.upper())
-        taras.append(tara)
-
-    validado = st.form_submit_button("✅ Validar Dado(s)")
-
+# Estados de controle
+for key in ["calculado", "validado", "resultado", "dados_tipo"]:
+    st.session_state.setdefault(key, False if key in ["calculado", "validado"] else None)
 # Validação
 if st.button("✅ Validar Dado(s)"):
     validado = True
