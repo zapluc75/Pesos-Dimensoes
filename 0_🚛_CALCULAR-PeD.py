@@ -97,9 +97,7 @@ if st.session_state.validado:
             calc_click = st.button ("❌ C A L C U L A R ", use_container_width=True)
         if calc_click: 
             pbt, limite, excesso = calcular_excesso(linha, taras, peso_liqnf, comprimento)
-            agora = datetime.now().strftime("%d-%m-%Y %H:%M:%S")
             dados_exportar = {
-                "DataHora": agora,
                 "TipoCaminhao": tipo,
                 "Placas": ";".join(placas),
                 "TaraTotal": int(sum(taras)),
